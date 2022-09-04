@@ -1,95 +1,3 @@
-local ChangeLogGui = Instance.new("ScreenGui")
-local ChangeLogBackground = Instance.new("Frame")
-local CloseButton = Instance.new("TextButton")
-local UpdateList = Instance.new("ScrollingFrame")
-local TextNote_1 = Instance.new("TextLabel")
-local UIGridLayout = Instance.new("UIGridLayout")
-local TextNote_2 = Instance.new("TextLabel")
-local TitleTab = Instance.new("Frame")
-local Title = Instance.new("TextLabel")
-
-ChangeLogGui.Name = "ChangeLogGui"
-ChangeLogGui.Parent = game:GetService("CoreGui")
-ChangeLogGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-ChangeLogBackground.Name = "ChangeLogBackground"
-ChangeLogBackground.Parent = ChangeLogGui
-ChangeLogBackground.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-ChangeLogBackground.Position = UDim2.new(0.157639444, 0, 0.209658429, 0)
-ChangeLogBackground.Size = UDim2.new(0.684721112, 0, 0.515901089, 0)
-ChangeLogBackground.Visible = false
-
-CloseButton.Name = "CloseButton"
-CloseButton.Parent = ChangeLogBackground
-CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-CloseButton.Position = UDim2.new(0, 0, 1.06620979, 0)
-CloseButton.Size = UDim2.new(1, 0, 0.11415524, 0)
-CloseButton.Font = Enum.Font.FredokaOne
-CloseButton.Text = "Close"
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CloseButton.TextScaled = true
-CloseButton.TextSize = 14.000
-CloseButton.TextWrapped = true
-CloseButton.MouseButton1Click:Connect(function()
-	ChangeLogBackground.Visible = false
-end)
-
-UpdateList.Name = "UpdateList"
-UpdateList.Parent = ChangeLogBackground
-UpdateList.Active = true
-UpdateList.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-UpdateList.BackgroundTransparency = 1.000
-UpdateList.Size = UDim2.new(1, 0, 0.997716844, 0)
-
-TextNote_1.Name = "TextNote_1"
-TextNote_1.Parent = UpdateList
-TextNote_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextNote_1.BackgroundTransparency = 1.000
-TextNote_1.Position = UDim2.new(0, 0, -6.98342717e-08, 0)
-TextNote_1.Size = UDim2.new(0.982290447, 0, 0.228832945, 0)
-TextNote_1.Font = Enum.Font.DenkOne
-TextNote_1.Text = "*Added roof (Teleport feature)"
-TextNote_1.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextNote_1.TextScaled = true
-TextNote_1.TextSize = 14.000
-TextNote_1.TextWrapped = true
-
-UIGridLayout.Parent = UpdateList
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellSize = UDim2.new(1, 10, 0, 50)
-
-TextNote_2.Name = "TextNote_2"
-TextNote_2.Parent = UpdateList
-TextNote_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextNote_2.BackgroundTransparency = 1.000
-TextNote_2.Position = UDim2.new(0, 0, -6.98342717e-08, 0)
-TextNote_2.Size = UDim2.new(0.982290447, 0, 0.228832945, 0)
-TextNote_2.Font = Enum.Font.DenkOne
-TextNote_2.Text = "*Fixed Bug's"
-TextNote_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextNote_2.TextScaled = true
-TextNote_2.TextSize = 14.000
-TextNote_2.TextWrapped = true
-
-TitleTab.Name = "TitleTab"
-TitleTab.Parent = ChangeLogBackground
-TitleTab.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-TitleTab.Position = UDim2.new(-0.000566034403, 0, -0.193313614, 0)
-TitleTab.Size = UDim2.new(1.00056601, 0, 0.161777765, 0)
-
-Title.Name = "Title"
-Title.Parent = TitleTab
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
-Title.Position = UDim2.new(-0.000284405513, 0, -0.00307894824, 0)
-Title.Size = UDim2.new(1.00000012, 0, 1.00307906, 0)
-Title.Font = Enum.Font.FredokaOne
-Title.Text = "What's New?"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextScaled = true
-Title.TextSize = 14.000
-Title.TextWrapped = true
-
 local CmdGui = Instance.new("ScreenGui")
 local Background = Instance.new("Frame")
 local CmdName = Instance.new("TextLabel")
@@ -433,7 +341,7 @@ end)
 local UseCommand = false
 local Cmd = {}
 
-Cmd[#Cmd + 1] =		{Text = "changelog / updatelog",Title = "Show the changelog"}
+Cmd[#Cmd + 1] =		{Text = "btools",Title = "Give local player btools"}
 Cmd[#Cmd + 1] =		{Text = "rejoin",Title = "Rejoin the game"}
 Cmd[#Cmd + 1] = 	{Text = "cuffs [plr]",Title = "Gives player hand cuffs"}
 Cmd[#Cmd + 1] = 	{Text = "keycard / key / card [plr]",Title = "Gives player key card"}
@@ -551,6 +459,7 @@ Cmd[#Cmd + 1] =		{Text = "clickarrest / click",Title = "Click arrest any players
 Cmd[#Cmd + 1] =		{Text = "crashserver / crash / server",Title = "It will make server crash"}
 Cmd[#Cmd + 1] =		{Text = "fullbright  / bright  / fullbrightness / brightness",Title = "It makes full brightness in the game"}
 Cmd[#Cmd + 1] =		{Text = "flycar / car",Title = "Fly car"}
+
 
 local Material = {}
 
@@ -1778,12 +1687,7 @@ function PlayerChatted(Message)
 		
 		Notify("Unfly", Color3.fromRGB(0, 255 ,0), "Success")
 	end
-	
-	if Command("uslm") then
-		StringsLowerMessage = false
-		Notify("Turn String lower message to false", Color3.fromRGB(0, 255, 0), "Success")
-	end
-	
+
 	if Command("inmates") then
 		workspace.Remote.TeamEvent:FireServer("Bright orange")
 		Notify("Become inmate", Color3.fromRGB(0, 255, 0), "Success")
@@ -2796,11 +2700,7 @@ function PlayerChatted(Message)
 		Notify("Obtained base ball bat", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
-	if Command("changelog") or Command("updatelog") then
-		ChangeLogBackground.Visible = true
-	end
-	
-	if Command("tools") or Command("tool") or Command("btool") or Command("btools") then
+	if Command("btools") then
 		local Backpack = game.Players.LocalPlayer.Backpack
 		local Character = game.Players.LocalPlayer.Character
 		if not Backpack:FindFirstChild("Bin_1") and not Character:FindFirstChild("Bin_1") then
