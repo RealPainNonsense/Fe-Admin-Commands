@@ -1366,7 +1366,7 @@ local Walls = {
 
 local Player = game.Players.localPlayer
 Notify("Loaded admin commands", Color3.fromRGB(0, 255, 0), "Loads")
-Notify("Made by Erick Denis David", Color3.fromRGB(0, 255, 0), "Welcome "..Player.Name)
+Notify("Made by Erick Denis David Exploits Team", Color3.fromRGB(0, 255, 0), "Welcome "..Player.Name)
 
 local Gyro = nil
 local Velocity = nil
@@ -1694,12 +1694,10 @@ function PlayerChatted(Message)
 	end
 	
 	if Command("guards") then
-		workspace.Remote.TeamEvent:FireServer("Bright blue")
 		if game.Players.LocalPlayer.TeamColor.Name == "Bright blue" then
 			Notify("Become guard", Color3.fromRGB(0, 255, 0), "Success")
 		else
 			workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Bright blue").Name)
-			Notify("Force become guard", Color3.fromRGB(0, 255, 0), "Success")
 		end
 	end
 
