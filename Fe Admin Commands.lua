@@ -354,23 +354,23 @@ Cmd[#Cmd + 1] =		{Text = "kill [plr]",Title = "Kill the player"}
 Cmd[#Cmd + 1] =		{Text = "killall",Title = "Kill all players"}
 Cmd[#Cmd + 1] =		{Text = "killguards",Title = "Kill all guards"}
 Cmd[#Cmd + 1] =		{Text = "killinmate / killsinmate",Title = "Kill all inmates"}
-Cmd[#Cmd + 1] =		{Text = "killcriminal / killscriminal",Title = "Kill all criminals"}
+Cmd[#Cmd + 1] =		{Text = "killcriminals",Title = "Kill all criminals"}
 Cmd[#Cmd + 1] =		{Text = "tase [plr]",Title = "Tase the player"}
 Cmd[#Cmd + 1] = 	{Text = "taseall",Title = "Tase all everyone"}
 Cmd[#Cmd + 1] =		{Text = "loopkill / loopkills [plr]",Title = "Loop kills player"}
 Cmd[#Cmd + 1] =		{Text = "unloopkill / unloopkills [plr]",Title = "Unloop kills player"}
 Cmd[#Cmd + 1] =		{Text = "loopkillall",Title = "Loop kills all players"}
-Cmd[#Cmd + 1] =		{Text = "loopkillguard / loopkillsguard",Title = "Loop kills all guards"}
-Cmd[#Cmd + 1] =		{Text = "loopkillinmates",Title = "Loop kills all inmates"}
-Cmd[#Cmd + 1] =		{Text = "loopkillcriminal / loopkillcriminals",Title = "Loop kills all criminals"}
 Cmd[#Cmd + 1] =		{Text = "unloopkillall",Title = "Unloop kills all players"}
+Cmd[#Cmd + 1] =		{Text = "loopkillguards",Title = "Loop kills all guards"}
+Cmd[#Cmd + 1] =		{Text = "loopkillinmates",Title = "Loop kills all inmates"}
+Cmd[#Cmd + 1] =		{Text = "loopkillcriminals",Title = "Loop kills all criminals"}
 Cmd[#Cmd + 1] =		{Text = "unloopkillguards",Title = "Unloop kills all guards"}
 Cmd[#Cmd + 1] =		{Text = "unloopkillinmates",Title = "Unloop kills all inmates"}
 Cmd[#Cmd + 1] =		{Text = "unloopkillcriminals",Title = "Unloop kills all criminals"}
-Cmd[#Cmd + 1] =		{Text = "inmates",Title = "Become inmate team"}
 Cmd[#Cmd + 1] =		{Text = "guards",Title = "Become guard team"}
-Cmd[#Cmd + 1] =		{Text = "crim / criminals / criminal",Title = "Become criminal team"}
+Cmd[#Cmd + 1] =		{Text = "inmates",Title = "Become inmate team"}
 Cmd[#Cmd + 1] =		{Text = "neutral",Title = "Become neutral team"}
+Cmd[#Cmd + 1] =		{Text = "crim / criminals / criminal",Title = "Become criminal team"}
 Cmd[#Cmd + 1] =		{Text = "re / refresh",Title = "Respawn on old position"}
 Cmd[#Cmd + 1] =		{Text = "goto / to [plr]",Title = "Teleport to the player"}
 Cmd[#Cmd + 1] =		{Text = "bring [plr]",Title = "Teleport player to you"}
@@ -400,20 +400,22 @@ Cmd[#Cmd + 1] =		{Text = "white",Title = "Changes name tag color to white color"
 Cmd[#Cmd + 1] =		{Text = "red",Title = "Changes name tag color to red color"}
 Cmd[#Cmd + 1] =		{Text = "green",Title = "Changes name tag color to green color"}
 Cmd[#Cmd + 1] =		{Text = "yellow",Title = "Changes name tag color to yellow color"}
-Cmd[#Cmd + 1] =		{Text = "lagserver / startlagserver",Title = "Lag server and disconnect after 5 minutes of lagging"}
-Cmd[#Cmd + 1] =		{Text = "unlagserver / stoplagserver",Title = "Stop lag server"}
+Cmd[#Cmd + 1] =		{Text = "lagserver / startlagserver / disconnect",Title = "Lag server and disconnect after 5 minutes of lagging"}
+Cmd[#Cmd + 1] =		{Text = "unlagserver / stoplagserver / undisconnect",Title = "Stop lag server"}
 Cmd[#Cmd + 1] =		{Text = "base / crimbase [plr]",Title = "Make the player become a criminal"}
 Cmd[#Cmd + 1] =		{Text = "prison [plr]",Title = "Bring player teleport you in prison"}
 Cmd[#Cmd + 1] =		{Text = "policeroom [plr]",Title = "Bring player teleport you in policeroom"}
 Cmd[#Cmd + 1] =		{Text = "secret [plr]",Title = "Bring player teleport you in secret"}
 Cmd[#Cmd + 1] =		{Text = "yard [plr]",Title = "Bring player teleport you in yard"}
+Cmd[#Cmd + 1] =		{Text = "trap",Title = "Teleport you in trap"}
+Cmd[#Cmd + 1] =		{Text = "trap [plr]",Title = "Bring player teleport you in trap"}
 Cmd[#Cmd + 1] =		{Text = "cafeteria / cafe [plr]",Title = "Bring player teleport you in cafe"}
 Cmd[#Cmd + 1] =		{Text = "tower [plr]",Title = "Bring player teleport you in tower"}
 Cmd[#Cmd + 1] =		{Text = "roof",Title = "Teleport you in roof"}
 Cmd[#Cmd + 1] =		{Text = "roof [plr]",Title = "Bring player teleport you in roof"}
 Cmd[#Cmd + 1] =		{Text = "armory+",Title = "Teleport you in armory+"}
 Cmd[#Cmd + 1] =		{Text = "armory+ [plr]",Title = "Bring player teleport you in armory+"}
-Cmd[#Cmd + 1] =		{Text = "lakesidegrocer / lake",Title = "Teleport you in armory+"}
+Cmd[#Cmd + 1] =		{Text = "lakesidegrocer / lake",Title = "Teleport you in lakeside grocer"}
 Cmd[#Cmd + 1] =		{Text = "lakesidegrocer /  lake [plr]",Title = "Bring player teleport you in lakeside grocer"}
 Cmd[#Cmd + 1] =		{Text = "roof [plr]",Title = "Bring player teleport you in roof"}
 Cmd[#Cmd + 1] =		{Text = "gatetower [plr]",Title = "Bring player teleport you in gatetower"}
@@ -427,8 +429,8 @@ Cmd[#Cmd + 1] =		{Text = "nodoors / deletedoors / removedoors",Title = "Deletes 
 Cmd[#Cmd + 1] =		{Text = "restoredoors / doors",Title = "Restores all doors"}
 Cmd[#Cmd + 1] =		{Text = "removefences / nofences",Title = "Remove all fences"}
 Cmd[#Cmd + 1] =		{Text = "restorefences / fences",Title = "Restores all fences"}
-Cmd[#Cmd + 1] =		{Text = "nowalls / deletewalls - delete walls",Title = "Deletes all walls"}
-Cmd[#Cmd + 1] =		{Text = "walls / restorewalls - restore walls",Title = "Restore all walls"}
+Cmd[#Cmd + 1] =		{Text = "nowalls / deletewalls",Title = "Deletes all walls"}
+Cmd[#Cmd + 1] =		{Text = "walls / restorewalls",Title = "Restore all walls"}
 Cmd[#Cmd + 1] =		{Text = "gatetower",Title = "Teleport to the gate tower"}
 Cmd[#Cmd + 1] = 	{Text = "tower",Title = "Teleport to the yard tower"}
 Cmd[#Cmd + 1] =	 	{Text = "sewer",Title = "Telepor to the sewer"}
@@ -441,7 +443,6 @@ Cmd[#Cmd + 1] = 	{Text = "unautorapidfire",Title = "Unauto activate rapid fire"}
 Cmd[#Cmd + 1] =		{Text = "armory",Title = "Teleports to the armory"}
 Cmd[#Cmd + 1] =		{Text = "cafeteria / cafe",Title = "Teleports to the cafeteria"}
 Cmd[#Cmd + 1] =		{Text = "crimbase / criminalbase",Title = "Teleports to the criminals base"}
-Cmd[#Cmd + 1] =		{Text = "lunchroom",Title = "Teleport to the cafeteria room"}
 Cmd[#Cmd + 1] =		{Text = "cellblock",Title = "Teleport to the cellblock"}
 Cmd[#Cmd + 1] =		{Text = "Hallway / Way",Title = "Teleport to the Hallway"}
 Cmd[#Cmd + 1] =		{Text = "kitchen / kitc",Title = "Teleport to the Kitchen"}
@@ -458,7 +459,9 @@ Cmd[#Cmd + 1] =		{Text = "unantifell / unantivoid",Title = "Unactivate anti fell
 Cmd[#Cmd + 1] =		{Text = "clickarrest / click",Title = "Click arrest any players"}
 Cmd[#Cmd + 1] =		{Text = "crashserver / crash / server",Title = "It will make server crash"}
 Cmd[#Cmd + 1] =		{Text = "fullbright  / bright  / fullbrightness / brightness",Title = "It makes full brightness in the game"}
-Cmd[#Cmd + 1] =		{Text = "flycar / car",Title = "Fly car"}
+Cmd[#Cmd + 1] =		{Text = "flycar / car",Title = "Activate fly car"}
+Cmd[#Cmd + 1] =		{Text = "invisible / invis",Title = "Make your character become invisible"}
+
 
 
 local Material = {}
@@ -1738,7 +1741,6 @@ function PlayerChatted(Message)
 		end
 	end
 	if Command("killall")  then
-		wait(.075)
 		KillAll()
 		Notify("Killed all players", Color3.fromRGB(0, 255, 0), "Success")
 	end
@@ -1850,21 +1852,40 @@ function PlayerChatted(Message)
 		_G.FullBrightExecuted = true
 		_G.FullBrightEnabled = not _G.FullBrightEnabled
 	end
+
+	if Command("invisible") or Command("invis") then
+		local player = game.Players.LocalPlayer
+		position = player.Character.HumanoidRootPart.Position
+		wait(0.1)
+		player.Character:MoveTo(position + Vector3.new(0, 1000000, 0))
+		wait(0.1)
+		humanoidrootpart = player.Character.HumanoidRootPart:clone()
+		wait(0.1)
+		player.Character.HumanoidRootPart:Destroy()
+		humanoidrootpart.Parent = player.Character
+		player.Character:MoveTo(position)
+		wait()
+		game.Players.LocalPlayer.Character.Torso.Transparency = 1
+		game.Players.LocalPlayer.Character.Head.Transparency  = 1
+		game.Players.LocalPlayer.Character["Left Arm"].Transparency = 1
+		game.Players.LocalPlayer.Character["Right Arm"].Transparency = 1
+		game.Players.LocalPlayer.Character["Left Leg"].Transparency = 1
+		game.Players.LocalPlayer.Character["Right Leg"].Transparency = 1
+		game.Players.LocalPlayer.Character.Humanoid:RemoveAccessories()
+		game.Players.LocalPlayer.Character.Head.face:Remove()
+	end
 	
-	if Command("killinmate") or Command("killinmates") or Command("killsinmate") or Command("killsinmates") then
-		wait(.075)
+	if Command("killinmates") then
 		KillTeam(BrickColor.new("Bright orange").Name)
 		Notify("Killed all inmates", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	
 	if Command("killguard") or Command("killsguard") or Command("killguards") or Command("killsguards") then
-		wait(.075)
 		KillTeam(BrickColor.new("Bright blue").Name)
 		Notify("Killed all guards", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	
-	if Command("killcriminal") or Command("killscriminal") or Command("killcriminals") or Command("killscriminals") then
-		wait(.075)
+	if Command("killcriminals") then
 		KillTeam(BrickColor.new("Really red").Name)
 		Notify("Killed all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
@@ -2369,11 +2390,11 @@ function PlayerChatted(Message)
 		end		
 	end
 	
-	if Command("lagserver") or Command("startlagserver") then
+	if Command("lagserver") or Command("startlagserver") or Command("disconnect") then
 		States.Lag_Server = true
 		Notify("Lagging server", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("unlagserver") or Command("stoplagserver") then
+	if Command("unlagserver") or Command("stoplagserver") or Command("undisconnect") then
 		States.Lag_Server = false
 		Notify("Unlagging server", Color3.fromRGB(0, 255, 0), "Success")
 	end
@@ -2477,23 +2498,33 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
-	if Command("secret") then
+
+	if Command("trap") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
-			Teleport(Player, CFrame.new(697, 97.492, 2364))
-			Notify("teleport to yard "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			Teleport(Player, CFrame.new(-342.985, 54.2398, 2015.41))
+			Notify("teleport to trap "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
 		else
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
 
+
+	if Command("secret") then
+		local Player = GetPlayer(Arg2)
+		if Player ~= nil then
+			Teleport(Player, CFrame.new(697, 97.492, 2364))
+			Notify("teleport to secret room "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+		else
+			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+		end
+	end
 	
 	if Command("policeroom") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(836.5386352539062, 99.98998260498047, 2320.604248046875))
-			Notify("teleport to policeroom "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			Notify("teleport to police room "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
 		else
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
@@ -2787,10 +2818,6 @@ function PlayerChatted(Message)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(835.28918457031, 99.990005493164, 2285.4909667969)
 	end
 	
-	if Command("lunchroom") then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(905, 100, 2226)
-	end
-	
 	if Command("gate") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(505, 103, 2250)
 	end
@@ -2833,6 +2860,10 @@ function PlayerChatted(Message)
 	
 	if Command("prison") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.77,100,2379.07)
+	end
+
+	if Command("trap") then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-342.985, 54.2398, 2015.41)
 	end
 	
 	if Command("voidall") then
