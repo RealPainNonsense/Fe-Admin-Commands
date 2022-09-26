@@ -2353,9 +2353,8 @@ function PlayerChatted(Message)
 	end
 	
 	if Command("crashserver") or Command("crash") or Command("server") then
-		Notify("Server will being crash in 30 seconds", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Server crash", Color3.fromRGB(0, 255, 0), "Success")
 		
-		wait(30)
 		local Gun = "Remington 870"
 		local Player = game.Players.LocalPlayer.Name
 		game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver[Gun].ITEMPICKUP)
