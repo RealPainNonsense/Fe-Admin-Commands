@@ -455,14 +455,12 @@ Cmd[#Cmd + 1] =		{Text = "otuside / escape",Title = "Teleport to the outside pri
 Cmd[#Cmd + 1] =		{Text = "opengate",Title = "Open the gate"}
 Cmd[#Cmd + 1] =		{Text = "antifell / antivoid",Title = "Activate anti fell to the void when respawn as custom team"}
 Cmd[#Cmd + 1] =		{Text = "unantifell / unantivoid",Title = "Unactivate anti fell to the void when respawn as custom team"}
-Cmd[#Cmd + 1] =		{Text = "clickarrest / click",Title = "Click arrest any players"}
+Cmd[#Cmd + 1] =		{Text = "clickarrest / click",Title = "Click arrest any players, activate click arrest"}
 Cmd[#Cmd + 1] =		{Text = "crashserver / crash / server",Title = "It will make server crash"}
 Cmd[#Cmd + 1] =		{Text = "fullbright  / bright  / fullbrightness / brightness",Title = "It makes full brightness in the game"}
 Cmd[#Cmd + 1] =		{Text = "flycar",Title = "Activate fly car"}
 Cmd[#Cmd + 1] =		{Text = "invisible / invis",Title = "Make your character become invisible"}
 Cmd[#Cmd + 1] =		{Text = "loaded / fe / slasher",Title = "Loaded FE Slasher"}
-
-
 
 local Material = {}
 
