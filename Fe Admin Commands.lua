@@ -1380,6 +1380,7 @@ function PlayerChatted(Message)
 	Arg3 = Split[3]
 	Arg4 = Split[4]
 	UseCommand = true
+	
 	if Command("killsaura") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil and not KillAura[plr.UserId] then
