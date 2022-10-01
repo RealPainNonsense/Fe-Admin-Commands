@@ -1409,6 +1409,13 @@ function PlayerChatted(Message)
 	end
 
 	if Command("loaded") or Command("fe") or Command("slasher") then
+		
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Loaded FE Slasher";
+			Text = "Please wait";
+			Duration = 5;
+		})
+
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/RealErickDenisDavid/Loaded-FE-Slasher/main/FE%20Slasher.lua", true))()
 	end
 	
