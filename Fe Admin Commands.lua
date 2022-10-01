@@ -457,7 +457,7 @@ Cmd[#Cmd + 1] =		{Text = "antifell / antivoid",Title = "Activate anti fell to th
 Cmd[#Cmd + 1] =		{Text = "unantifell / unantivoid",Title = "Unactivate anti fell to the void when respawn as custom team"}
 Cmd[#Cmd + 1] =		{Text = "clickarrest / click",Title = "Click arrest any players, activate click arrest"}
 Cmd[#Cmd + 1] =		{Text = "crashserver / crash / server",Title = "It will make server crash"}
-Cmd[#Cmd + 1] =		{Text = "fullbright  / bright  / fullbrightness / brightness",Title = "It makes full brightness in the game"}
+Cmd[#Cmd + 1] =		{Text = "fullbright  / bright",Title = "It makes full brightness in the game"}
 Cmd[#Cmd + 1] =		{Text = "flycar",Title = "Activate fly car"}
 Cmd[#Cmd + 1] =		{Text = "invisible / invis",Title = "Make your character become invisible"}
 Cmd[#Cmd + 1] =		{Text = "loaded / fe / slasher",Title = "Loaded FE Slasher"}
@@ -1752,7 +1752,7 @@ function PlayerChatted(Message)
 		KillAll()
 		Notify("Killed all players", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("fullbright") or Command("bright") or Command("fullbrightness") or Command("brightness")  then
+	if Command("fullbright") or Command("bright") then
 		if not _G.FullBrightExecuted then
 
 			_G.FullBrightEnabled = false
