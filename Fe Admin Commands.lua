@@ -460,7 +460,7 @@ Cmd[#Cmd + 1] =		{Text = "crashserver / crash / server",Title = "It will make se
 Cmd[#Cmd + 1] =		{Text = "fullbright  / bright  / fullbrightness / brightness",Title = "It makes full brightness in the game"}
 Cmd[#Cmd + 1] =		{Text = "flycar",Title = "Activate fly car"}
 Cmd[#Cmd + 1] =		{Text = "invisible / invis",Title = "Make your character become invisible"}
-Cmd[#Cmd + 1] =		{Text = "loaded",Title = "Loaded FE Slasher"}
+Cmd[#Cmd + 1] =		{Text = "loaded / fe / slasher",Title = "Loaded FE Slasher"}
 
 
 
@@ -1410,7 +1410,7 @@ function PlayerChatted(Message)
 		end
 	end
 
-	if Command("loaded") then
+	if Command("loaded") or Command("fe") or Command("slasher") then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/RealErickDenisDavid/Loaded-FE-Slasher/main/FE%20Slasher.lua", true))()
 	end
 	
