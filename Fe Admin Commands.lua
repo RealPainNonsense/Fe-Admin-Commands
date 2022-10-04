@@ -23,7 +23,7 @@ local Notify1 = Instance.new("TextLabel")
 local CloseBar = Instance.new("TextButton")
 local TransparencyBar = Instance.new("TextButton")
 
-local Prefix = "/"
+local Prefix = ":"
 
 CmdGui.Name = "CmdGui"
 CmdGui.Parent = game:GetService("CoreGui")
@@ -404,7 +404,7 @@ Cmd[#Cmd + 1] =		{Text = "lagserver / startlagserver / disconnect",Title = "Lag 
 Cmd[#Cmd + 1] =		{Text = "unlagserver / stoplagserver / undisconnect",Title = "Stop lag server"}
 Cmd[#Cmd + 1] =		{Text = "base / crimbase [plr]",Title = "Make the player become a criminal"}
 Cmd[#Cmd + 1] =		{Text = "prison [plr]",Title = "Bring player teleport you in prison"}
-Cmd[#Cmd + 1] =		{Text = "policeroom [plr]",Title = "Bring player teleport you in policeroom"}
+Cmd[#Cmd + 1] =		{Text = "guardsroom [plr]",Title = "Bring player teleport you in guards room"}
 Cmd[#Cmd + 1] =		{Text = "secret [plr]",Title = "Bring player teleport you in secret"}
 Cmd[#Cmd + 1] =		{Text = "yard [plr]",Title = "Bring player teleport you in yard"}
 Cmd[#Cmd + 1] =		{Text = "trap",Title = "Teleport you in trap"}
@@ -444,10 +444,7 @@ Cmd[#Cmd + 1] =		{Text = "cafeteria / cafe",Title = "Teleports to the cafeteria"
 Cmd[#Cmd + 1] =		{Text = "crimbase / criminalbase",Title = "Teleports to the criminals base"}
 Cmd[#Cmd + 1] =		{Text = "cellblock",Title = "Teleport to the cellblock"}
 Cmd[#Cmd + 1] =		{Text = "Hallway / Way",Title = "Teleport to the Hallway"}
-Cmd[#Cmd + 1] =		{Text = "kitchen / kitc",Title = "Teleport to the Kitchen"}
-Cmd[#Cmd + 1] =		{Text = "police / policeroom",Title = "Teleports to the police room"}
-Cmd[#Cmd + 1] =		{Text = "sewer / sewersenter / enter",Title = "Teleport to the sewer enterance"}
-Cmd[#Cmd + 1] =		{Text = "sewer / exit",Title = "Teleport to the sewer ext"}
+Cmd[#Cmd + 1] =		{Text = "kitchen",Title = "Teleport to the Kitchen"}
 Cmd[#Cmd + 1] =		{Text = "secret / secretroom ",Title = "Teleport to the secret room"}
 Cmd[#Cmd + 1] =		{Text = "surveilance / surve / surveroom",Title = "Teleport to the surveilance room"}
 Cmd[#Cmd + 1] =		{Text = "prison",Title = "Teleport to the prison"}
@@ -457,7 +454,7 @@ Cmd[#Cmd + 1] =		{Text = "antifell / antivoid",Title = "Activate anti fell to th
 Cmd[#Cmd + 1] =		{Text = "unantifell / unantivoid",Title = "Unactivate anti fell to the void when respawn as custom team"}
 Cmd[#Cmd + 1] =		{Text = "clickarrest / click",Title = "Click arrest any players, activate click arrest"}
 Cmd[#Cmd + 1] =		{Text = "crashserver / crash / server",Title = "It will make server crash"}
-Cmd[#Cmd + 1] =		{Text = "fullbright  / bright",Title = "It makes full brightness in the game"}
+Cmd[#Cmd + 1] =		{Text = "fullbright  / normalbright",Title = "It makes full brightness in the game"}
 Cmd[#Cmd + 1] =		{Text = "flycar",Title = "Activate fly car"}
 Cmd[#Cmd + 1] =		{Text = "invisible / invis",Title = "Make your character become invisible"}
 Cmd[#Cmd + 1] =		{Text = "loaded / fe / slasher",Title = "Loaded FE Slasher"}
@@ -1753,7 +1750,7 @@ function PlayerChatted(Message)
 		KillAll()
 		Notify("Killed all players", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("fullbright") or Command("bright") then
+	if Command("fullbright") or Command("normalbright") then
 		if not _G.FullBrightExecuted then
 
 			_G.FullBrightEnabled = false
@@ -2799,7 +2796,7 @@ function PlayerChatted(Message)
 	if Command("cafeteria") or Command("cafe") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(877, 100, 2256)
 	end
-	if Command("kitchen") or Command("kitc") then
+	if Command("kitchen") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(906.641845703125, 99.98993682861328, 2237.67333984375)
 	end
 	
@@ -2843,7 +2840,7 @@ function PlayerChatted(Message)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(860.78448486328, 99.990005493164, 2362.9597167969)
 	end
 	
-	if Command("police") or Command("policeroom") then
+	if Command("guardsroom") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(836.5386352539062, 99.98998260498047, 2320.604248046875)
 	end
 	
@@ -2855,7 +2852,7 @@ function PlayerChatted(Message)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(795.251953125, 99.98998260498047, 2327.720703125)
 	end
 	
-	if Command("sewerenterance") or Command("sewersenter") or Command("enter") then
+	if Command("sewer") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(917.174, 76.406, 2426.199)
 	end
 	
