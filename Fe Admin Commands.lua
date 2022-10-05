@@ -348,8 +348,8 @@ Cmd[#Cmd + 1] = 	{Text = "keycard / key / card [plr]",Title = "Gives player key 
 Cmd[#Cmd + 1] =		{Text = "leave / leaveserver / quit",Title = "Leave the server"}
 Cmd[#Cmd + 1] = 	{Text = "antitp / antibring",Title = "You are cannot be bring by another exploiter"}
 Cmd[#Cmd + 1] = 	{Text = "unantitp / unantibring",Title = "You are can be bring by another exploiter"}
-Cmd[#Cmd + 1] = 	{Text = "killsaura [plr]",Title = "Gives player a kill aura"}
-Cmd[#Cmd + 1] = 	{Text = "nokillsaura [plr]",Title = "Remove a kill aura from player"}
+Cmd[#Cmd + 1] = 	{Text = "aura / addaura [plr]",Title = "Gives player a kill aura"}
+Cmd[#Cmd + 1] = 	{Text = "unaura / removeaura [plr]",Title = "Remove a kill aura from player"}
 Cmd[#Cmd + 1] =		{Text = "kill [plr]",Title = "Kill the player"}
 Cmd[#Cmd + 1] =		{Text = "killall",Title = "Kill all players"}
 Cmd[#Cmd + 1] =		{Text = "killguards",Title = "Kill all guards"}
@@ -1378,7 +1378,7 @@ function PlayerChatted(Message)
 	Arg4 = Split[4]
 	UseCommand = true
 	
-	if Command("killsaura") then
+	if Command("aura") or Command("addaura") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil and not KillAura[plr.UserId] then
 			KillAura[plr.UserId] = {Player = plr}
@@ -1392,7 +1392,7 @@ function PlayerChatted(Message)
 		end
 	end
 	
-	if Command("nokillsaura") then
+	if Command("unaura") or Command("removeaura") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil and KillAura[plr.UserId] then
 			KillAura[plr.UserId] = nil
