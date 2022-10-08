@@ -23,7 +23,7 @@ local Notify1 = Instance.new("TextLabel")
 local CloseBar = Instance.new("TextButton")
 local TransparencyBar = Instance.new("TextButton")
 
-local Prefix = ":"
+local Prefix = "/"
 
 CmdGui.Name = "CmdGui"
 CmdGui.Parent = game:GetService("CoreGui")
