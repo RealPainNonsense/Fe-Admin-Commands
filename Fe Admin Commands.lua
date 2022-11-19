@@ -1,3 +1,5 @@
+local StarterGui = game:GetService("StarterGui")
+
 local CmdGui = Instance.new("ScreenGui")
 local Background = Instance.new("Frame")
 local CmdName = Instance.new("TextLabel")
@@ -380,7 +382,6 @@ Cmd[#Cmd + 1] =		{Text = "tp / teleport [plr] [plr2]",Title = "Teleport player t
 Cmd[#Cmd + 1] =		{Text = "arrest [plr] [time]",Title = "Arrest player that is a criminal"}
 Cmd[#Cmd + 1] =		{Text = "arrestall / arrestothers",Title = "Arrest all criminals"}
 Cmd[#Cmd + 1] =		{Text = "clearloopkill / clearloopkills",Title = "clear all loop kills table"}
-Cmd[#Cmd + 1] =		{Text = "killaura",Title = "Activate kill aura"}
 Cmd[#Cmd + 1] =		{Text = "nokillaura / unkillaura",Title = "Unactivate kill aura"}
 Cmd[#Cmd + 1] = 	{Text = "antifling",Title = "Activate anti fling"}
 Cmd[#Cmd + 1] = 	{Text = "unantifling",Title = "Unactivate anti fling"}
@@ -457,7 +458,8 @@ Cmd[#Cmd + 1] =		{Text = "crashserver / crash / server",Title = "It will make se
 Cmd[#Cmd + 1] =		{Text = "fullbright  / normalbright",Title = "It makes full brightness in the game"}
 Cmd[#Cmd + 1] =		{Text = "flycar",Title = "Activate fly car"}
 Cmd[#Cmd + 1] =		{Text = "invisible / invis",Title = "Make your character become invisible"}
-Cmd[#Cmd + 1] =		{Text = "loaded / fe / slasher",Title = "Loaded FE Slasher"}
+Cmd[#Cmd + 1] =		{Text = "slasher",Title = "Loaded FE Slasher"}
+Cmd[#Cmd + 1] =		{Text = "sonic",Title = "Loaded FE Sonic"}
 
 local Material = {}
 
@@ -1377,7 +1379,7 @@ function PlayerChatted(Message)
 	Arg3 = Split[3]
 	Arg4 = Split[4]
 	UseCommand = true
-	
+
 	if Command("aura") or Command("addaura") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil and not KillAura[plr.UserId] then
@@ -1391,7 +1393,7 @@ function PlayerChatted(Message)
 			Notify("No arguaments found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("unaura") or Command("removeaura") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil and KillAura[plr.UserId] then
@@ -1406,9 +1408,9 @@ function PlayerChatted(Message)
 		end
 	end
 
-	if Command("loaded") or Command("fe") or Command("slasher") then
-		
-		game.StarterGui:SetCore("SendNotification", {
+	if Command("slasher") then
+
+		StarterGui:SetCore("SendNotification", {
 			Title = "Loaded FE Slasher";
 			Text = "Please wait";
 			Duration = 5;
@@ -1417,6 +1419,16 @@ function PlayerChatted(Message)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/RealErickDenisDavid/Loaded-FE-Slasher/main/FE%20Slasher.lua", true))()
 	end
 	
+	
+	if Command("sonic") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Loaded FE Sonic";
+			Text = "Please wait";
+			Duration = 5;
+		})
+		loadstring(game:HttpGetAsync("https://pastebin.com/raw/SyF5t70A", true))()
+	end
+
 	if Command("flycar") then
 		local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
 		hint.Text = "Press X To Toggle"
@@ -1472,7 +1484,7 @@ function PlayerChatted(Message)
 			bv:Destroy()
 			plr.Character.Humanoid.PlatformStand = false
 		end
-			mouse.KeyDown:connect(function(key)
+		mouse.KeyDown:connect(function(key)
 			if key:lower() == "x" then
 				if flying then flying = false
 				else
@@ -1489,7 +1501,7 @@ function PlayerChatted(Message)
 				ctrl.r = 1
 			end
 		end)
-			mouse.KeyUp:connect(function(key)
+		mouse.KeyUp:connect(function(key)
 			if key:lower() == "w" then
 				ctrl.f = 0
 			elseif key:lower() == "s" then
@@ -1502,9 +1514,9 @@ function PlayerChatted(Message)
 			wait(5)
 			hint:Destroy()
 		end)
-			Fly()
+		Fly()
 	end
-	
+
 	if Command("keycard") or Command ("key") or Command ("card") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil then
@@ -1547,7 +1559,7 @@ function PlayerChatted(Message)
 			Notify("No player found",Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("cuffs") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil then
@@ -1585,17 +1597,17 @@ function PlayerChatted(Message)
 			Notify("No player found",Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("antitp") or Command("antibring") then
 		States.Anti_Bring = true
 		Notify("Anti teleports on", Color3.fromRGB(0, 255 ,0), "Success")
 	end
-	
+
 	if Command("unantitp") or Command("unantibring") then
 		States.Anti_Bring = false
 		Notify("Anti teleports off", Color3.fromRGB(0, 255 ,0), "Success")
 	end
-	
+
 	if Command("fly") then
 		States.Fly = true
 		States.FlySpeed = tonumber(Arg2) or tonumber(States.FlySpeed) or 1
@@ -1610,7 +1622,7 @@ function PlayerChatted(Message)
 			Gyro = nil
 			Velocity = nil
 		end)
-		
+
 		pcall(function()
 			Gyro = Instance.new("BodyGyro", game.Players.LocalPlayer.Character.HumanoidRootPart)
 			Velocity = Instance.new("BodyVelocity", game.Players.LocalPlayer.Character.HumanoidRootPart)
@@ -1630,7 +1642,7 @@ function PlayerChatted(Message)
 				game.Players.LocalPlayer.Character.Humanoid.PlatformStand = true
 			end
 		end)
-		
+
 		game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
 			for i,v in pairs(controls) do
 				if key == v then
@@ -1638,7 +1650,7 @@ function PlayerChatted(Message)
 				end
 			end
 		end)
-		
+
 		game.Players.LocalPlayer:GetMouse().KeyUp:Connect(function(key)
 			for i,v in pairs(controls) do
 				if key == v then
@@ -1646,7 +1658,7 @@ function PlayerChatted(Message)
 				end
 			end
 		end)
-		
+
 		game.Players.LocalPlayer.CharacterAdded:Connect(function()
 			if States.Fly then
 				States.Fly = false
@@ -1675,10 +1687,10 @@ function PlayerChatted(Message)
 				States.Fly = true
 			end
 		end)
-		
+
 		Notify("Fly", Color3.fromRGB(0, 255 ,0), "Success")
 	end
-	
+
 	if Command("unfly") then
 		States.Fly = false
 		pcall(function()
@@ -1693,7 +1705,7 @@ function PlayerChatted(Message)
 			Velocity = nil
 			game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
 		end)
-		
+
 		Notify("Unfly", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 
@@ -1701,7 +1713,7 @@ function PlayerChatted(Message)
 		workspace.Remote.TeamEvent:FireServer("Bright orange")
 		Notify("Become inmate", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("guards") then
 		if game.Players.LocalPlayer.TeamColor.Name == "Bright blue" then
 			Notify("Become guard", Color3.fromRGB(0, 255, 0), "Success")
@@ -1880,22 +1892,22 @@ function PlayerChatted(Message)
 		game.Players.LocalPlayer.Character.Humanoid:RemoveAccessories()
 		game.Players.LocalPlayer.Character.Head.face:Remove()
 	end
-	
+
 	if Command("killinmates") then
 		KillTeam(BrickColor.new("Bright orange").Name)
 		Notify("Killed all inmates", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("killguard") or Command("killsguard") or Command("killguards") or Command("killsguards") then
 		KillTeam(BrickColor.new("Bright blue").Name)
 		Notify("Killed all guards", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("killcriminals") then
 		KillTeam(BrickColor.new("Really red").Name)
 		Notify("Killed all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("loopkill") or Command("loopkills") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and not LoopKill[Player.UserId] then
@@ -1905,7 +1917,7 @@ function PlayerChatted(Message)
 			Notify("No player found / already loop kills", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("unloopkill") or Command("unloopkills") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and LoopKill[Player.UserId] then
@@ -1915,42 +1927,42 @@ function PlayerChatted(Message)
 			Notify("No player found / Player has no loop kills", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("loopkillguards") then
 		States.LoopKill_Guards = true
 		Notify("Looping kills all guards", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("unloopkillguards") then
 		States.LoopKill_Guards = false
 		Notify("Unloop kills all guards", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("loopkillinmates") then
 		States.LoopKill_Inmates = true
 		Notify("Looping kills all inmates", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("unloopkillinmates") then
 		States.LoopKill_Inmates = false
 		Notify("Unloop kills all inmates", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("loopkillcriminals") then
 		States.LoopKill_Criminals = true
 		Notify("Looping kills all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("unloopkillcriminals") then
 		States.LoopKill_Criminals = false
 		Notify("Unlooping kills all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("loopkillall") then
 		States.LoopKill_Others = true
 		Notify("Looping kills all players", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("unloopkillall") then
 		States.LoopKill_Criminals = false
 		States.LoopKill_Guards = false
@@ -1958,7 +1970,7 @@ function PlayerChatted(Message)
 		States.LoopKill_Others = false
 		Notify("Unlooping kills all players", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("goto") or Command("to") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -1968,7 +1980,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("re") or Command("refresh") then
 		if game.Players.LocalPlayer.TeamColor.Name ~= "Medium stone grey" then
 			if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
@@ -1990,7 +2002,7 @@ function PlayerChatted(Message)
 		end
 		Notify("Refreshed", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("res") or Command("respawn") then
 		if game.Players.LocalPlayer.TeamColor.Name ~= "Medium stone grey" then
 			workspace.Remote.loadchar:InvokeServer()
@@ -2005,7 +2017,7 @@ function PlayerChatted(Message)
 		end
 		Notify("Respawned", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("looparrest") or Command("spamarrest") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2045,7 +2057,7 @@ function PlayerChatted(Message)
 			until not game.Players[Player.Name] or not States.SpamArrest
 		end
 	end
-	
+
 	if Command("unlooparrest") or Command("unspamarrest") then
 		States.SpamArrest = false
 		Notify("Unspam arrest", Color3.fromRGB(0, 255, 0), "Success")
@@ -2059,17 +2071,17 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("antifling") then
 		States.Anti_Fling = true
 		Notify("Turn anti fling on", Color3.fromRGB(0, 255, 0), "Success")
 		game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Size = Vector3.new(math.huge, game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Size.Y, math.huge)
 	end
-	
+
 	if Command("noclip") or Command("noclips") then
 		States.Noclips = true
 		Notify("Turn no clips on", Color3.fromRGB(0, 255, 0), "Success")
-		
+
 		game:GetService("RunService").Stepped:Connect(function()
 			if States.Noclips then
 				pcall(function()
@@ -2079,17 +2091,17 @@ function PlayerChatted(Message)
 			end
 		end)
 	end
-	
+
 	if Command("clip") or Command("clips") then
 		States.Noclips = false
 		Notify("Turn no clips off", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("unantifling") then
 		States.Anti_Fling = false
 		Notify("Turn anti fling off", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("superpunch") or Command("onepunch") then
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local MeleeEvent = ReplicatedStorage:FindFirstChild("meleeEvent")
@@ -2158,12 +2170,12 @@ function PlayerChatted(Message)
 			end
 		end)
 	end
-	
+
 	if Command("normalpunch") or Command("oldpunch") or Command("nosuperpunch") or Command("stoponepunch") or Command("unonepunch") or Command("unsuperpunch") then
 		States.SuperPunch = false
 		Notify("Turn super punch off", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("superknife") then
 		local player = GetPlayer(Arg2)
 		if player ~= nil and player ~= game.Players.LocalPlayer then
@@ -2290,23 +2302,23 @@ function PlayerChatted(Message)
 		workspace.CurrentCamera.CFrame = savedcamcf
 		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("unview") or Command("unspectate") or Command("stopwatch") or Command("unwatch") then
 		Watching = nil
 		workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
 		Notify("Unviewed", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("antivoid") or Command("antifell") then
 		States.Anti_Void = true
 		Notify("Turn anti void on", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("unantivoid") or Command("unantifell") then
 		States.Anti_Void = false
 		Notify("Turn anti void off", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("bring") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2316,7 +2328,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("teleport") or Command("tp") then
 		local Player = GetPlayer(Arg2)
 		local Player2 = GetPlayer(Arg3)
@@ -2327,7 +2339,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(0, 255, 0), "Error")
 		end
 	end
-	
+
 	if Command("void") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2337,30 +2349,30 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("killaura") then
 		States.Kill_Aura = true
 		Notify("Turn kill aura on", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("nokillaura") or Command("unkillaura") then
 		States.Kill_Aura = false
 		Notify("Turn kill aura off", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("auto") then
 		States.Auto_Refresh = true
 		Notify("Turn auto refresh on", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("unauto") then
 		States.Auto_Refresh = false
 		Notify("Turn auto refresh off", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("crashserver") or Command("crash") or Command("server") then
 		Notify("Server crash", Color3.fromRGB(0, 255, 0), "Success")
-		
+
 		local Gun = "Remington 870"
 		local Player = game.Players.LocalPlayer.Name
 		game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver[Gun].ITEMPICKUP)
@@ -2394,7 +2406,7 @@ function PlayerChatted(Message)
 			end
 		end		
 	end
-	
+
 	if Command("lagserver") or Command("startlagserver") or Command("disconnect") then
 		States.Lag_Server = true
 		Notify("Lagging server", Color3.fromRGB(0, 255, 0), "Success")
@@ -2403,7 +2415,7 @@ function PlayerChatted(Message)
 		States.Lag_Server = false
 		Notify("Unlagging server", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("gravity") or Command("setgravity") then
 		local Gravity = tonumber(Arg2)
 		if Gravity ~= nil then
@@ -2413,7 +2425,7 @@ function PlayerChatted(Message)
 			Notify("Count needed", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("makecrim") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2423,7 +2435,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("base") or Command("crimbase") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2433,7 +2445,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("tower") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2493,7 +2505,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("yard") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2523,7 +2535,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("policeroom") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2533,7 +2545,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("cafeteria") or Command("cafe") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2543,7 +2555,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	
+
 	if Command("leave") or Command("leaveserver") or Command("quit") then
 		Notify("Leaving server", Color3.fromRGB(0, 255, 0), "Success")
 		wait(.1)
@@ -2554,32 +2566,32 @@ function PlayerChatted(Message)
 		Notify("Rejoining server", Color3.fromRGB(0, 255, 0), "Success")
 		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
 	end
-	
+
 	if Command("nodoors") or Command("deletedoors") or Command("removedoors") then
 		if workspace:FindFirstChild("Doors") then
 			workspace.Doors.Parent = game.Lighting
 		end
 		Notify("Deleted doors", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("doors") or Command("restoredoors") then
 		if game.Lighting:FindFirstChild("Doors") then
 			game.Lighting.Doors.Parent = workspace
 		end
 		Notify("Restored doors", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("nowalls") or Command("deletedoors") then
-		
+
 		pcall(function()
 			for i,v in pairs(Walls) do
 				v.Parent = game.Lighting
 			end
 		end)
-		
+
 		Notify("Deleted walls", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("walls") or Command("restorewalls") then
 		pcall(function()
 			for i,v in pairs(game.Lighting:GetChildren()) do
@@ -2608,12 +2620,12 @@ function PlayerChatted(Message)
 		States.God_Mode = true
 		Notify("Turn god mode on", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("ungod") or Command("ungodmode") then
 		States.God_Mode = false
 		Notify("Turn god mode off", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("arrest") or Command("handcuffs") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
@@ -2621,10 +2633,10 @@ function PlayerChatted(Message)
 			Notify("Arrested "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
 		else
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
-			
+
 		end
 	end
-	
+
 	if Command("arrestall") or Command("arrestother") or Command("arrestothers") then
 		for i,v in pairs(game.Players:GetPlayers()) do
 			if v ~= game.Players.LocalPlayer then
@@ -2633,10 +2645,10 @@ function PlayerChatted(Message)
 				end
 			end
 		end
-		
+
 		Notify("Arrested all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("click") or Command("clickarrest") then
 		local mouse = game.Players.LocalPlayer:GetMouse()
 		local arrestEvent = game.Workspace.Remote.arrest
@@ -2645,12 +2657,12 @@ function PlayerChatted(Message)
 			local response = arrestEvent:InvokeServer(obj)
 		end)
 	end
-	
+
 	if Command("opengate") then
 		workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.buttons["Prison Gate"]["Prison Gate"])
 		Notify("Opened gate", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("autorapidfire") then
 		States.Auto_RapidFire = true
 		Notify("Turn auto rapid fire on", Color3.fromRGB(0, 255, 0), "Success")
@@ -2669,7 +2681,7 @@ function PlayerChatted(Message)
 			workspace.Remote.TeamEvent:FireServer("Medium stone grey")
 		end
 	end
-	
+
 	if Command("unautorapidfire") then
 		States.Auto_RapidFire = false
 		if game.Players.LocalPlayer.TeamColor.Name ~= "Medium stone grey" then
@@ -2740,19 +2752,19 @@ function PlayerChatted(Message)
 			HopperBin_1.BinType = 1
 			HopperBin_1.Name = "Bin_1"
 		end
-		
+
 		if not Backpack:FindFirstChild("Bin_2") and not Character:FindFirstChild("Bin_2") then
 			local HopperBin_2 = Instance.new("HopperBin", Backpack)
 			HopperBin_2.BinType = 2
 			HopperBin_2.Name = "Bin_2"
 		end
-		
+
 		if not Backpack:FindFirstChild("Bin_3") and not Character:FindFirstChild("Bin_3") then
 			local HopperBin_3 = Instance.new("HopperBin", Backpack)
 			HopperBin_3.BinType = 3
 			HopperBin_3.Name = "Bin_3"
 		end
-		
+
 		if not Backpack:FindFirstChild("Bin_4") and not Character:FindFirstChild("Bin_4") then
 			local HopperBin_4 = Instance.new("HopperBin", Backpack)
 			HopperBin_4.BinType = 4
@@ -2761,7 +2773,7 @@ function PlayerChatted(Message)
 		loadstring(game:GetObjects("rbxassetid://552440069")[1].Source)()
 		Notify("Obtained btools", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("antilag") or Command("boostfps") then
 		States.BoostFps = true
 		Notify("Turn anti lag on", Color3.fromRGB(0, 255, 0), "Success")
@@ -2772,7 +2784,7 @@ function PlayerChatted(Message)
 			end)
 		end
 	end
-	
+
 	if Command("unantilag") then
 		States.BoostFps = false
 		Notify("Turn anti lag off", Color3.fromRGB(0, 255, 0), "Success")
@@ -2782,24 +2794,24 @@ function PlayerChatted(Message)
 			end)
 		end
 	end
-	
+
 	if Command("serverhop") or Command("newserver") or Command("changeserver") then
 		Notify("Changing server", Color3.fromRGB(0, 255, 0), "Success")
 		wait(.1)
 		game:GetService("TeleportService"):Teleport(game.PlaceId)
 	end
-	
+
 	if Command("outside") or Command("escape") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(288.452, 69.999, 2206.731)
 	end
-	
+
 	if Command("cafeteria") or Command("cafe") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(877, 100, 2256)
 	end
 	if Command("kitchen") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(906.641845703125, 99.98993682861328, 2237.67333984375)
 	end
-	
+
 	if Command("yard") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(791, 98, 2498)
 	end
@@ -2807,7 +2819,7 @@ function PlayerChatted(Message)
 	if Command("armory+") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(403.426, 11.4254, 1174.49)
 	end
-	
+
 	if Command("lakesidegrocer") or Command("lake") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(474.3, 11.4254, 1171)
 	end
@@ -2815,11 +2827,11 @@ function PlayerChatted(Message)
 	if Command("crimbase") or Command("criminalbase") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 95, 2055)
 	end
-	
+
 	if Command("armory") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(835.28918457031, 99.990005493164, 2285.4909667969)
 	end
-	
+
 	if Command("gate") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(505, 103, 2250)
 	end
@@ -2831,35 +2843,35 @@ function PlayerChatted(Message)
 	if Command("tower") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(822, 131, 2588)
 	end
-	
+
 	if Command("gatetower") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(502, 126, 2306)
 	end
-	
+
 	if Command("hallway") or Command ("way") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(860.78448486328, 99.990005493164, 2362.9597167969)
 	end
-	
+
 	if Command("guardsroom") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(836.5386352539062, 99.98998260498047, 2320.604248046875)
 	end
-	
+
 	if Command("secret") or Command("secretroom") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(697, 97.492, 2364)
 	end
-	
+
 	if Command("surveilance") or Command("surve") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(795.251953125, 99.98998260498047, 2327.720703125)
 	end
-	
+
 	if Command("sewer") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(917.174, 76.406, 2426.199)
 	end
-	
+
 	if Command("cellblock") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.43115234375, 99.989990234375, 2440.3828125)
 	end
-	
+
 	if Command("prison") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.77,100,2379.07)
 	end
@@ -2867,7 +2879,7 @@ function PlayerChatted(Message)
 	if Command("trap") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-342.985, 54.2398, 2015.41)
 	end
-	
+
 	if Command("voidall") then
 		for i,v in pairs(game.Players:GetPlayers()) do
 			if v ~= game.Players.LocalPlayer then
@@ -2880,7 +2892,7 @@ function PlayerChatted(Message)
 		States.Notify = true
 		Notify("Notify on", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	
+
 	if Command("nonotify") then
 		States.Notify = false
 		Notify("Notify off", Color3.fromRGB(0, 255, 0), "Success")
@@ -2904,59 +2916,59 @@ function AdminPlayerChatted(Message, Player)
 	Arg3 = Split[3]
 	Arg4 = Split[4]
 	UseCommand = true
-	
+
 	if Command("cafe") then
 		Teleport(Player, CFrame.new(877, 100, 2256))
 	end
-	
+
 	if Command("prison") then
 		Teleport(Player, CFrame.new(918.77,100,2379.07))
 	end
-	
+
 	if Command("HallWay") then
 		Teleport(Player, CFrame.new(860.78448486328, 99.990005493164, 2362.9597167969))		
 	end
 	if Command("cellblock") then
 		Teleport(Player, CFrame.new(918.43115234375, 99.989990234375, 2440.3828125))
 	end
-	
+
 	if Command("armory") then
 		Teleport(Player, CFrame.new(835.28918457031, 99.990005493164, 2285.4909667969))
 	end
-	
+
 	if Command("tower") then
 		Teleport(Player, CFrame.new(822, 131, 2588))
 	end
-	
+
 	if Command("crimbase") or Command("criminalbase") then
 		Teleport(Player, CFrame.new(-942, 94, 2055))
 	end
-	
+
 	if Command("bring") then
 		TeleportV(GetPlayer(Arg2), Player)
 	end
-	
+
 	if Command("void") then
 		Void(GetPlayer(Arg2))
 	end
 	if Command("beam") then
 		Beam(GetPlayer(Arg2), math.huge, 1)
 	end
-	
+
 	if Command("yard") then
 		Teleport(Player, CFrame.new(791, 98, 2498))
 	end
-	
+
 	if Command("prison") then
 		Teleport(Player, CFrame.new(918.77,100,2379.07))	
 	end 
-	
+
 	if Command("hallway") then
 		Teleport(Player, CFrame.new(860.78448486328, 99.990005493164, 2362.9597167969))	
 	end 
 
-	
-	
+
+
 	if Command("killguard") or Command("killguards") then
 		wait(.075)
 		KillTeam(BrickColor.new("Bright blue").Name)
@@ -2976,21 +2988,21 @@ function AdminPlayerChatted(Message, Player)
 	if Command("kill") or Command("kills") then
 		Kill(GetPlayer(Arg2))
 	end
-	
+
 	if Command("loopkill") or Command("loopkills") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and not LoopKill[Player.UserId] then
 			LoopKill[Player.UserId] = {Player = Player}
 		end
 	end
-	
+
 	if Command("unloopkill") or Command("unloopkills") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and LoopKill[Player.UserId] then
 			LoopKill[Player.UserId] = nil
 		end
 	end
-	
+
 	if Command("superknife") then
 		local player = GetPlayer(Arg2)
 		if player ~= nil then
@@ -3030,34 +3042,34 @@ function AdminPlayerChatted(Message, Player)
 			SuperKnife[player.UserId] = nil
 		end
 	end
-	
+
 	if Command("tase") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Tase(Player)
 		end
 	end
-	
+
 	if Command("taseall") then
 		TaserAll()
 	end
-	
+
 	if Command("makecrim") then
 		Teleport(GetPlayer(Arg2), CFrame.new(-919, 96, 2138))
 	end
-	
+
 	if Command("arrest") then
 		Arrest(GetPlayer(Arg2))
 	end
-	
+
 	if Command("crim") then
 		Teleport(Player, CFrame.new(-919, 96, 2138))
 	end
-	
+
 	if Command("goto") or Command("to") then
 		TeleportV(Player, GetPlayer(Arg2))
 	end
-	
+
 	if Command("cmd") or Command("cmds") then
 		Chat("/w "..Player.Name.." "..Prefix.."goto [plr] "..Prefix.."to [plr] "..Prefix.."kill [plr] "..Prefix.."kills [plr] "..Prefix.."makecrim [plr] "..Prefix.."arrest [plr] "..Prefix.."tase [plr] "..Prefix.."loopkill [plr] "..Prefix.."unloopkill [plr]")
 		Chat("/w "..Player.Name.." "..Prefix.."crim "..Prefix.."tower "..Prefix.."nexus "..Prefix.."backnexus "..Prefix.."cafe "..Prefix.."armory "..Prefix.."bring [plr]")
