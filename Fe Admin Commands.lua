@@ -28,7 +28,7 @@ local TransparencyBar = Instance.new("TextButton")
 local Prefix = ":"
 
 CmdGui.Name = "CmdGui"
-CmdGui.Parent = game:GetService("CoreGui")
+CmdGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 CmdGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Background.Name = "Background"
