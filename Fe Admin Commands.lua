@@ -1,4 +1,11 @@
 local StarterGui = game:GetService("StarterGui")
+local Player = game:GetService("Players")
+
+StarterGui:SetCore("SendNotification", {
+	Title = "Loaded FE Admin Commands";
+	Text = "Made by Pain Exploiter Team";
+	Duration = 5;
+})
 
 local CmdGui = Instance.new("ScreenGui")
 local Background = Instance.new("Frame")
@@ -15,13 +22,6 @@ local Close = Instance.new("TextButton")
 local Background3 = Instance.new("Frame")
 local Topbar = Instance.new("TextLabel")
 local CmdTitle = Instance.new("TextLabel")
-local Background4 = Instance.new("Frame")
-local Notify6 = Instance.new("TextLabel")
-local Notify5 = Instance.new("TextLabel")
-local Notify4 = Instance.new("TextLabel")
-local Notify3 = Instance.new("TextLabel")
-local Notify2 = Instance.new("TextLabel")
-local Notify1 = Instance.new("TextLabel")
 local CloseBar = Instance.new("TextButton")
 local TransparencyBar = Instance.new("TextButton")
 
@@ -138,8 +138,8 @@ Background2.Name = "Background"
 Background2.Parent = CmdGui
 Background2.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Background2.BorderSizePixel = 0
-Background2.Position = UDim2.new(0, 11, 0, 934)
-Background2.Size = UDim2.new(0, 250, 0, 80)
+Background2.Position = UDim2.new(0, 0,0.889, 0)
+Background2.Size = UDim2.new(0.215, 0,0.108, 0)
 Background2.Active = true
 Background2.Draggable = true
 
@@ -148,8 +148,8 @@ Label.Parent = Background2
 Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Label.BackgroundTransparency = 1
 Label.BorderSizePixel = 0
-Label.Position = UDim2.new(0, 0, 0, 0)
-Label.Size = UDim2.new(0, 250, 0, 25)
+Label.Position = UDim2.new(0, 0,0, 0)
+Label.Size = UDim2.new(1, 0,0.313, 0)
 Label.Font = Enum.Font.GothamBlack
 Label.Text = "Execute Bar"
 Label.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -161,8 +161,8 @@ Execute.Name = "Execute"
 Execute.Parent = Background2
 Execute.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Execute.BorderColor3 = Color3.fromRGB(0, 255, 0)
-Execute.Position = UDim2.new(0.097, 0, 0.436, 0)
-Execute.Size = UDim2.new(0, 200, 0, 30)
+Execute.Position = UDim2.new(0.1, 0,0.45, 0)
+Execute.Size = UDim2.new(0.8, 0,0.375, 0)
 Execute.Font = Enum.Font.SourceSans
 Execute.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
 Execute.PlaceholderText = "Press "..Prefix.." To Enter"
@@ -205,99 +205,6 @@ CmdTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 CmdTitle.TextSize = 14.000
 CmdTitle.TextWrapped = true
 
-Background4.Name = "Background4"
-Background4.Parent = CmdGui
-Background4.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Background4.BorderSizePixel = 0
-Background4.Position = UDim2.new(0, 17, 0, 795)
-Background4.Size = UDim2.new(0, 250, 0, 119)
-Background4.Active = true
-Background4.Draggable = true
-
-Notify6.Name = "Notify6"
-Notify6.Parent = Background4
-Notify6.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Notify6.BackgroundTransparency = 1.000
-Notify6.BorderSizePixel = 0
-Notify6.Position = UDim2.new(0, 0, -0.00512820482, 0)
-Notify6.Size = UDim2.new(0, 250, 0, 20)
-Notify6.Font = Enum.Font.GothamBlack
-Notify6.Text = ""
-Notify6.TextColor3 = Color3.fromRGB(255, 255, 255)
-Notify6.TextScaled = true
-Notify6.TextSize = 14.000
-Notify6.TextWrapped = true
-
-Notify5.Name = "Notify5"
-Notify5.Parent = Background4
-Notify5.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Notify5.BackgroundTransparency = 1.000
-Notify5.BorderSizePixel = 0
-Notify5.Position = UDim2.new(0, 0, 0.162939027, 0)
-Notify5.Size = UDim2.new(0, 250, 0, 20)
-Notify5.Font = Enum.Font.GothamBlack
-Notify5.Text = ""
-Notify5.TextColor3 = Color3.fromRGB(255, 255, 255)
-Notify5.TextScaled = true
-Notify5.TextSize = 14.000
-Notify5.TextWrapped = true
-
-Notify4.Name = "Notify4"
-Notify4.Parent = Background4
-Notify4.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Notify4.BackgroundTransparency = 1.000
-Notify4.BorderSizePixel = 0
-Notify4.Position = UDim2.new(0, 0, 0.331006259, 0)
-Notify4.Size = UDim2.new(0, 250, 0, 20)
-Notify4.Font = Enum.Font.GothamBlack
-Notify4.Text = ""
-Notify4.TextColor3 = Color3.fromRGB(255, 255, 255)
-Notify4.TextScaled = true
-Notify4.TextSize = 14.000
-Notify4.TextWrapped = true
-
-Notify3.Name = "Notify3"
-Notify3.Parent = Background4
-Notify3.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Notify3.BackgroundTransparency = 1.000
-Notify3.BorderSizePixel = 0
-Notify3.Position = UDim2.new(0, 0, 0.499073505, 0)
-Notify3.Size = UDim2.new(0, 250, 0, 20)
-Notify3.Font = Enum.Font.GothamBlack
-Notify3.Text = ""
-Notify3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Notify3.TextScaled = true
-Notify3.TextSize = 14.000
-Notify3.TextWrapped = true
-
-Notify2.Name = "Notify2"
-Notify2.Parent = Background4
-Notify2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Notify2.BackgroundTransparency = 1.000
-Notify2.BorderSizePixel = 0
-Notify2.Position = UDim2.new(0, 0, 0.667140722, 0)
-Notify2.Size = UDim2.new(0, 250, 0, 20)
-Notify2.Font = Enum.Font.GothamBlack
-Notify2.Text = ""
-Notify2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Notify2.TextScaled = true
-Notify2.TextSize = 14.000
-Notify2.TextWrapped = true
-
-Notify1.Name = "Notify1"
-Notify1.Parent = Background4
-Notify1.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Notify1.BackgroundTransparency = 1.000
-Notify1.BorderSizePixel = 0
-Notify1.Position = UDim2.new(0, 0, 0.835207999, 0)
-Notify1.Size = UDim2.new(0, 250, 0, 20)
-Notify1.Font = Enum.Font.GothamBlack
-Notify1.Text = ""
-Notify1.TextColor3 = Color3.fromRGB(255, 255, 255)
-Notify1.TextScaled = true
-Notify1.TextSize = 14.000
-Notify1.TextWrapped = true
-
 CloseBar.Name = "CloseBar"
 CloseBar.Parent = Background4
 CloseBar.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
@@ -314,35 +221,11 @@ CloseBar.MouseButton1Click:Connect(function()
 	Background4.Visible = false
 end)
 
-TransparencyBar.Name = "TransparencyBar"
-TransparencyBar.Parent = Background4
-TransparencyBar.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TransparencyBar.BorderSizePixel = 0
-TransparencyBar.Position = UDim2.new(0.799999952, 0, -0.210084036, 0)
-TransparencyBar.Size = UDim2.new(0, 25, 0, 25)
-TransparencyBar.Font = Enum.Font.GothamBlack
-TransparencyBar.Text = "="
-TransparencyBar.TextColor3 = Color3.fromRGB(255, 255, 255)
-TransparencyBar.TextScaled = true
-TransparencyBar.TextSize = 14.000
-TransparencyBar.TextWrapped = true
-TransparencyBar.MouseButton1Click:Connect(function()
-	if TransparencyBar.Text == "=" then
-		Background4.BackgroundTransparency = 0.750
-		CloseBar.BackgroundTransparency = 0.750
-		TransparencyBar.BackgroundTransparency = 0.750
-		TransparencyBar.Text = "+"
-	else
-		Background4.BackgroundTransparency = 0.000
-		CloseBar.BackgroundTransparency = 0.000
-		TransparencyBar.BackgroundTransparency = 0.000
-		TransparencyBar.Text = "="
-	end
-end)
-
 local UseCommand = false
 local Cmd = {}
 
+Cmd[#Cmd + 1] =		{Text = "admin / rank [plr]",Title = "Give a commands to player"}
+Cmd[#Cmd + 1] =		{Text = "unadmin / removeadmin [plr]",Title = "Remove a commands from player"}
 Cmd[#Cmd + 1] =		{Text = "btools",Title = "Give local player btools"}
 Cmd[#Cmd + 1] =		{Text = "rejoin",Title = "Rejoin the game"}
 Cmd[#Cmd + 1] = 	{Text = "cuffs [plr]",Title = "Gives player hand cuffs"}
@@ -350,10 +233,10 @@ Cmd[#Cmd + 1] = 	{Text = "keycard / key / card [plr]",Title = "Gives player key 
 Cmd[#Cmd + 1] =		{Text = "leave / leaveserver / quit",Title = "Leave the server"}
 Cmd[#Cmd + 1] = 	{Text = "antitp / antibring",Title = "You are cannot be bring by another exploiter"}
 Cmd[#Cmd + 1] = 	{Text = "unantitp / unantibring",Title = "You are can be bring by another exploiter"}
-Cmd[#Cmd + 1] = 	{Text = "aura / addaura [plr]",Title = "Gives player a kill aura"}
-Cmd[#Cmd + 1] = 	{Text = "unaura / removeaura [plr]",Title = "Remove a kill aura from player"}
+Cmd[#Cmd + 1] = 	{Text = "addaura / giveaura /  aura [plr]",Title = "Gives player a kill aura"}
+Cmd[#Cmd + 1] = 	{Text = " removeaura / unaura [plr]",Title = "Remove a kill aura from player"}
 Cmd[#Cmd + 1] =		{Text = "kill [plr]",Title = "Kill the player"}
-Cmd[#Cmd + 1] =		{Text = "killall",Title = "Kill all players"}
+Cmd[#Cmd + 1] =		{Text = "killall / oof",Title = "Kill all players"}
 Cmd[#Cmd + 1] =		{Text = "killguards",Title = "Kill all guards"}
 Cmd[#Cmd + 1] =		{Text = "killinmate / killsinmate",Title = "Kill all inmates"}
 Cmd[#Cmd + 1] =		{Text = "killcriminals",Title = "Kill all criminals"}
@@ -391,6 +274,7 @@ Cmd[#Cmd + 1] =		{Text = "view / spectate / watch [plr]",Title = "Spectates the 
 Cmd[#Cmd + 1] =		{Text = "unview / unspectate / stopwatch",Title = "Unspectates the player"}
 Cmd[#Cmd + 1] =		{Text = "superpunch / onepunch",Title = "Activate super punch"}
 Cmd[#Cmd + 1] =		{Text = "nosuperpunch / normalpunch",Title = "Unactivate super punch"}
+Cmd[#Cmd + 1] =		{Text = "prefix",Title = "Changes prefix"}
 Cmd[#Cmd + 1] = 	{Text = "antilag / boostfps",Title = "Boost a little fps"}
 Cmd[#Cmd + 1] = 	{Text = "unantilag",Title = "Stop boost the fps"}
 Cmd[#Cmd + 1] = 	{Text = "noclip / noclips",Title = "Activate no clips"}
@@ -403,10 +287,11 @@ Cmd[#Cmd + 1] =		{Text = "green",Title = "Changes name tag color to green color"
 Cmd[#Cmd + 1] =		{Text = "yellow",Title = "Changes name tag color to yellow color"}
 Cmd[#Cmd + 1] =		{Text = "lagserver / startlagserver / disconnect",Title = "Lag server and disconnect after 5 minutes of lagging"}
 Cmd[#Cmd + 1] =		{Text = "unlagserver / stoplagserver / undisconnect",Title = "Stop lag server"}
+Cmd[#Cmd + 1] =		{Text = "speed / setspeed / walkspeed [count]",Title = "Changes walk speeds"}
+Cmd[#Cmd + 1] =		{Text = "jumppower / setjumppower [count]",Title = "Changes jump powers"}
 Cmd[#Cmd + 1] =		{Text = "base / crimbase [plr]",Title = "Make the player become a criminal"}
 Cmd[#Cmd + 1] =		{Text = "prison [plr]",Title = "Bring player teleport you in prison"}
 Cmd[#Cmd + 1] =		{Text = "guardsroom [plr]",Title = "Bring player teleport you in guards room"}
-Cmd[#Cmd + 1] =		{Text = "secret [plr]",Title = "Bring player teleport you in secret"}
 Cmd[#Cmd + 1] =		{Text = "yard [plr]",Title = "Bring player teleport you in yard"}
 Cmd[#Cmd + 1] =		{Text = "trap",Title = "Teleport you in trap"}
 Cmd[#Cmd + 1] =		{Text = "trap [plr]",Title = "Bring player teleport you in trap"}
@@ -414,10 +299,6 @@ Cmd[#Cmd + 1] =		{Text = "cafeteria / cafe [plr]",Title = "Bring player teleport
 Cmd[#Cmd + 1] =		{Text = "tower [plr]",Title = "Bring player teleport you in tower"}
 Cmd[#Cmd + 1] =		{Text = "roof",Title = "Teleport you in roof"}
 Cmd[#Cmd + 1] =		{Text = "roof [plr]",Title = "Bring player teleport you in roof"}
-Cmd[#Cmd + 1] =		{Text = "armory+",Title = "Teleport you in armory+"}
-Cmd[#Cmd + 1] =		{Text = "armory+ [plr]",Title = "Bring player teleport you in armory+"}
-Cmd[#Cmd + 1] =		{Text = "lakesidegrocer / lake",Title = "Teleport you in lakeside grocer"}
-Cmd[#Cmd + 1] =		{Text = "lakesidegrocer /  lake [plr]",Title = "Bring player teleport you in lakeside grocer"}
 Cmd[#Cmd + 1] =		{Text = "roof [plr]",Title = "Bring player teleport you in roof"}
 Cmd[#Cmd + 1] =		{Text = "gatetower [plr]",Title = "Bring player teleport you in gatetower"}
 Cmd[#Cmd + 1] =		{Text = "loopbring [plr]",Title = "Loop bring player"}
@@ -425,6 +306,8 @@ Cmd[#Cmd + 1] =		{Text = "unloopbring ",Title = "Unloop bring player"}
 Cmd[#Cmd + 1] =		{Text = "baseballbat / bat",Title = "Gets bat"}
 Cmd[#Cmd + 1] =		{Text = "superknife",Title = "Gets super knife"}
 Cmd[#Cmd + 1] =		{Text = "autofire",Title = "Changes gun ststes to auto fire"}
+Cmd[#Cmd + 1] =		{Text = "auto",Title = "Auto respawn on old position when died"}
+Cmd[#Cmd + 1] =		{Text = "unauto",Title = "Stop auto respawn on old position when died"}
 Cmd[#Cmd + 1] =		{Text = "nodoors / deletedoors / removedoors",Title = "Deletes all doors"}
 Cmd[#Cmd + 1] =		{Text = "restoredoors / doors",Title = "Restores all doors"}
 Cmd[#Cmd + 1] =		{Text = "removefences / nofences",Title = "Remove all fences"}
@@ -446,7 +329,6 @@ Cmd[#Cmd + 1] =		{Text = "crimbase / criminalbase",Title = "Teleports to the cri
 Cmd[#Cmd + 1] =		{Text = "cellblock",Title = "Teleport to the cellblock"}
 Cmd[#Cmd + 1] =		{Text = "Hallway / Way",Title = "Teleport to the Hallway"}
 Cmd[#Cmd + 1] =		{Text = "kitchen",Title = "Teleport to the Kitchen"}
-Cmd[#Cmd + 1] =		{Text = "secret / secretroom ",Title = "Teleport to the secret room"}
 Cmd[#Cmd + 1] =		{Text = "surveilance / surve / surveroom",Title = "Teleport to the surveilance room"}
 Cmd[#Cmd + 1] =		{Text = "prison",Title = "Teleport to the prison"}
 Cmd[#Cmd + 1] =		{Text = "otuside / escape",Title = "Teleport to the outside prison"}
@@ -1285,21 +1167,6 @@ function PlayerPickUp(Player)
 	end)
 end
 
-local function Notify(Message, Color, Text)
-	Notify6.Text = Notify5.Text
-	Notify6.TextColor3 = Notify5.TextColor3
-	Notify5.Text = Notify4.Text
-	Notify5.TextColor3 = Notify4.TextColor3
-	Notify4.Text = Notify3.Text
-	Notify4.TextColor3 = Notify3.TextColor3
-	Notify3.Text = Notify2.Text
-	Notify3.TextColor3 = Notify2.TextColor3
-	Notify2.Text = Notify1.Text
-	Notify2.TextColor3 = Notify1.TextColor3
-	Notify1.Text = "["..Text.."] "..Message
-	Notify1.TextColor3 = Color or Color3.fromRGB(255, 255, 255)
-end
-
 local function Loadstring(Https)
 	if not Https then return end
 	loadstring(game:HttpGet((Https), true))()
@@ -1363,10 +1230,6 @@ local Walls = {
 	game.Workspace.Prison_Administration
 }
 
-local Player = game.Players.localPlayer
-Notify("Loaded admin commands", Color3.fromRGB(0, 255, 0), "Loads")
-Notify("Made by Erick Denis David Exploits Team", Color3.fromRGB(0, 255, 0), "Welcome "..Player.Name)
-
 local Gyro = nil
 local Velocity = nil
 local SuperKnife = {}
@@ -1380,31 +1243,43 @@ function PlayerChatted(Message)
 	Arg4 = Split[4]
 	UseCommand = true
 
-	if Command("aura") or Command("addaura") then
+	if Command("giveaura") or Command("addaura") or Command("aura") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil and not KillAura[plr.UserId] then
 			KillAura[plr.UserId] = {Player = plr}
-			Notify("Added kill aura to "..plr.DisplayName, Color3.fromRGB(0, 255, 0), "Success")
-		elseif not KillAura[plr.UserId] then
-			Notify(plr.DisplayName.." already have kill aura", Color3.fromRGB(255, 255, 0), "Warn")
-		elseif plr == nil then
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Gave "..Player.Name.." aura";
+				Duration = 5;
+			})
+
 		else
-			Notify("No arguaments found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
-	if Command("unaura") or Command("removeaura") then
+	if Command("removeaura") or Command("unaura") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil and KillAura[plr.UserId] then
 			KillAura[plr.UserId] = nil
-			Notify("Removed kill aura from "..plr.DisplayName, Color3.fromRGB(0, 255, 0), "Success")
-		elseif KillAura[plr.UserId] then
-			Notify(plr.DisplayName.." don't have kill aura", Color3.fromRGB(255, 255, 0), "Warn")
-		elseif plr == nil then
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "remove "..Player.Name.." aura";
+				Duration = 5;
+			})
+
 		else
-			Notify("No arguaments found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -1418,7 +1293,106 @@ function PlayerChatted(Message)
 
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/RealErickDenisDavid/Loaded-FE-Slasher/main/FE%20Slasher.lua", true))()
 	end
-	
+
+	if Command("bringall") then
+		for i,v in pairs(game.Players:GetPlayers()) do
+			if v ~= game.Players.LocalPlayer then
+				Teleport(v, GetPos())
+			end
+		end
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Broght all";
+			Duration = 5;
+		})
+	end
+
+	if Command("giveadmin") or Command("giverank") or Command("giveadmin") or Command("rank") then
+		local Player = GetPlayer(Arg2)
+		if Player ~= nil and not Admin[Player.UserId] then
+			Admin[Player.UserId] = {Player = Player}
+			Chat("/w "..Player.Name.." You've got admin permissions! Type "..Prefix.."cmds or "..Prefix.."cmd to see all commands")
+
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Gave "..Player.Name.." admin commands";
+				Duration = 5;
+			})
+
+			else
+				StarterGui:SetCore("SendNotification", {
+					Title = "Error";
+					Text = "No player found / already admin";
+					Duration = 5;
+				})
+		end
+	end
+	if Command("removeadmin") or Command("removerank") or Command("unadmin") then
+		local Player = GetPlayer(Arg2)
+		if Player ~= nil and Admin[Player.UserId] then
+			Admin[Player.UserId] = nil
+			Chat("/w "..Player.Name.." You are bad you've been removed admin permissions")
+
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "Removed admins from "..Player.Name;
+				Duration = 5;
+			})
+
+		else
+			StarterGui:SetCore("SendNotification", {
+			Title = "Error";
+			Text = "No player found / already remove admin";
+			Duration = 5;
+		})
+		end
+	end
+
+	if Command("auto") then
+		States.Auto_Refresh = true
+		
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn auto refresh on";
+			Duration = 5;
+		})
+		
+		while wait() do
+			if States.Auto_Refresh == true then
+				pcall(function()
+					if game.Players.LocalPlayer.Character.Humanoid.Health < 1 then
+						if game.Players.LocalPlayer.TeamColor.Name ~= "Medium stone grey" then
+							if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+								local savedcf = GetPos()
+								local savedcamcf = GetCamPos()
+								workspace.Remote.loadchar:InvokeServer()
+								game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
+								workspace.CurrentCamera.CFrame = savedcamcf
+							end
+						else
+							if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+								local savedcf = GetPos()
+								local savedcamcf = GetCamPos()
+								workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Bright orange").Name)
+								game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
+								workspace.CurrentCamera.CFrame = savedcamcf
+								workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+							end
+						end
+					end
+				end)
+			end
+		end
+	end
+	if Command("unauto") then
+		States.Auto_Refresh = false
+
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn auto refresh off";
+			Duration = 5;
+		})
+	end
 	
 	if Command("sonic") then
 		StarterGui:SetCore("SendNotification", {
@@ -1427,6 +1401,38 @@ function PlayerChatted(Message)
 			Duration = 5;
 		})
 		loadstring(game:HttpGetAsync("https://pastebin.com/raw/SyF5t70A", true))()
+	end
+
+	if Command("prefix") then
+		local NewPrefix = Arg2
+		if NewPrefix ~= nil then
+			Prefix = NewPrefix
+			Execute.PlaceholderText = "Press "..Prefix.." To Enter"
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Changed prefix";
+				Duration = 5;
+			})
+		else
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "Text needed";
+				Duration = 5;
+			})
+		end
+	end
+
+	if Command("cmds") then
+		if Background.Visible == true then
+			Background.Visible = false
+		else
+			Background.Visible = true
+		end
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Showed Commands";
+			Duration = 5;
+		})
 	end
 
 	if Command("flycar") then
@@ -1517,7 +1523,7 @@ function PlayerChatted(Message)
 		Fly()
 	end
 
-	if Command("keycard") or Command ("key") or Command ("card") then
+	if Command ("key") or Command ("card") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil then
 			local savedteam = game.Players.LocalPlayer.TeamColor.Name
@@ -1554,9 +1560,6 @@ function PlayerChatted(Message)
 			workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new(savedteam).Name)
 			UseCommand = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
-			Notify("Gave key card to "..plr.DisplayName)
-		else
-			Notify("No player found",Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
 
@@ -1592,20 +1595,27 @@ function PlayerChatted(Message)
 			workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new(savedteam).Name)
 			UseCommand = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
-			Notify("Gave handcuffs to "..plr.DisplayName)
-		else
-			Notify("No player found",Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
 
 	if Command("antitp") or Command("antibring") then
+
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn anti bring on";
+			Duration = 5;
+		})
 		States.Anti_Bring = true
-		Notify("Anti teleports on", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 
 	if Command("unantitp") or Command("unantibring") then
+
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn anti bring off";
+			Duration = 5;
+		})
 		States.Anti_Bring = false
-		Notify("Anti teleports off", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 
 	if Command("fly") then
@@ -1687,8 +1697,6 @@ function PlayerChatted(Message)
 				States.Fly = true
 			end
 		end)
-
-		Notify("Fly", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 
 	if Command("unfly") then
@@ -1706,43 +1714,61 @@ function PlayerChatted(Message)
 			game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
 		end)
 
-		Notify("Unfly", Color3.fromRGB(0, 255 ,0), "Success")
 	end
 
 	if Command("inmates") then
+
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Become a inmate";
+			Duration = 5;
+		})
+
 		workspace.Remote.TeamEvent:FireServer("Bright orange")
-		Notify("Become inmate", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("guards") then
+
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Become a guards";
+			Duration = 5;
+		})
+
 		if game.Players.LocalPlayer.TeamColor.Name == "Bright blue" then
-			Notify("Become guard", Color3.fromRGB(0, 255, 0), "Success")
 		else
 			workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Bright blue").Name)
 		end
 	end
 
 	if Command("criminal") or Command("criminals") or Command("crim") then
+
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Become a criminal";
+			Duration = 5;
+		})
+
 		local savedcf = GetPos()
 		local savedcamcf = GetCamPos()
 		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Really red").Name)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
 		workspace.CurrentCamera.CFrame = savedcamcf
-		Notify("Become a criminal", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
-	if Command("neutral") or Command("neutrals") then
+	if Command("neutral") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Become a neutral";
+			Duration = 5;
+		})
 		workspace.Remote.TeamEvent:FireServer("Medium stone grey")
-		Notify("Become neutral", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("tase") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Tase(Player)
-			Notify("Tased "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
-		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
 
@@ -1753,14 +1779,29 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Kill(Player)
-			Notify("Killed "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Killed "..Player.Name;
+				Duration = 5;
+			})
+
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
-	if Command("killall")  then
+
+	if Command("killall") or Command("oof")  then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Killed all players";
+			Duration = 5;
+		})
 		KillAll()
-		Notify("Killed all players", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("fullbright") or Command("normalbright") then
 		if not _G.FullBrightExecuted then
@@ -1895,26 +1936,33 @@ function PlayerChatted(Message)
 
 	if Command("killinmates") then
 		KillTeam(BrickColor.new("Bright orange").Name)
-		Notify("Killed all inmates", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("killguard") or Command("killsguard") or Command("killguards") or Command("killsguards") then
 		KillTeam(BrickColor.new("Bright blue").Name)
-		Notify("Killed all guards", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("killcriminals") then
 		KillTeam(BrickColor.new("Really red").Name)
-		Notify("Killed all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("loopkill") or Command("loopkills") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and not LoopKill[Player.UserId] then
 			LoopKill[Player.UserId] = {Player = Player}
-			Notify("Looping kills "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Looping kills "..Player.name;
+				Duration = 5;
+			})
+
 		else
-			Notify("No player found / already loop kills", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
+
 		end
 	end
 
@@ -1922,62 +1970,112 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and LoopKill[Player.UserId] then
 			LoopKill[Player.UserId] = nil
-			Notify("Unloop kills "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Unloop kills "..Player.name;
+				Duration = 5;
+			})
+
 		else
-			Notify("No player found / Player has no loop kills", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
 	if Command("loopkillguards") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Looping kills all guards";
+			Duration = 5;
+		})
+		
 		States.LoopKill_Guards = true
-		Notify("Looping kills all guards", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("unloopkillguards") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Unloop kills all guards";
+			Duration = 5;
+		})
 		States.LoopKill_Guards = false
-		Notify("Unloop kills all guards", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("loopkillinmates") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Looping kills all inmates";
+			Duration = 5;
+		})
 		States.LoopKill_Inmates = true
-		Notify("Looping kills all inmates", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("unloopkillinmates") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Unloop kills all inmates";
+			Duration = 5;
+		})
 		States.LoopKill_Inmates = false
-		Notify("Unloop kills all inmates", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("loopkillcriminals") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Looping kills all criminals";
+			Duration = 5;
+		})
 		States.LoopKill_Criminals = true
-		Notify("Looping kills all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("unloopkillcriminals") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Unlooping kills all criminals";
+			Duration = 5;
+		})
 		States.LoopKill_Criminals = false
-		Notify("Unlooping kills all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("loopkillall") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Looping kills all players";
+			Duration = 5;
+		})
 		States.LoopKill_Others = true
-		Notify("Looping kills all players", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("unloopkillall") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Unlooping kills all players";
+			Duration = 5;
+		})
 		States.LoopKill_Criminals = false
 		States.LoopKill_Guards = false
 		States.LoopKill_Inmates = false
 		States.LoopKill_Others = false
-		Notify("Unlooping kills all players", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("goto") or Command("to") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[Player.Name].HumanoidRootPart.CFrame
-			Notify("Go to "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Go to "..Player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2000,7 +2098,11 @@ function PlayerChatted(Message)
 				workspace.Remote.TeamEvent:FireServer("Medium stone grey")
 			end
 		end
-		Notify("Refreshed", Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Refreshed";
+			Duration = 5;
+		})
 	end
 
 	if Command("res") or Command("respawn") then
@@ -2015,72 +2117,30 @@ function PlayerChatted(Message)
 			workspace.CurrentCamera.CFrame = savedcamcf
 			workspace.Remote.TeamEvent:FireServer("Medium stone grey")
 		end
-		Notify("Respawned", Color3.fromRGB(0, 255, 0), "Success")
-	end
-
-	if Command("looparrest") or Command("spamarrest") then
-		local Player = GetPlayer(Arg2)
-		if Player ~= nil then
-			Notify("Spam arresting "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
-			States.SpamArrest = true
-			repeat wait()
-				pcall(function()
-					local CanArrest = false
-					repeat wait()
-						if Player.TeamColor.Name == "Really red" and not CanArrest then
-							CanArrest = true
-						end
-						if Player.TeamColor.Name == "Bright orange" and not CanArrest then
-							Teleport(Player, CFrame.new(976.48529052734, 99.990005493164, 2338.4716796875))
-							if (Player.Character:FindFirstChildOfClass("Part").CFrame.p-Vector3.new(976.48529052734, 99.990005493164, 2338.4716796875)).magnitude < 10 then
-								CanArrest = true
-							end
-						end
-						if Player.TeamColor.Name ~= "Bright orange" and Player.TeamColor.Name ~= "Really red" and not CanArrest then
-							Teleport(Player, CFrame.new(-975.58190917969, 109.32379150391, 2061.7973632813))
-						end
-					until CanArrest or not States.SpamArrest or not game.Players[Player.Name]
-					wait(.1)
-					game.Workspace.Remote.loadchar:InvokeServer()
-					UseCommand = true
-					for i = 1,10 do
-						wait()
-						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 1)
-					end
-					for i = 1,750 do
-						coroutine.wrap(function()
-							ArrestEvent(Player, math.huge)
-						end)()
-					end
-					repeat wait() until Player.CharacterAdded
-				end)
-			until not game.Players[Player.Name] or not States.SpamArrest
-		end
-	end
-
-	if Command("unlooparrest") or Command("unspamarrest") then
-		States.SpamArrest = false
-		Notify("Unspam arrest", Color3.fromRGB(0, 255, 0), "Success")
-	end
-	if Command("view") or Command("spectate") or Command("watch") then
-		local Player = GetPlayer(Arg2)
-		if Player ~= nil then
-			Watching = Player
-			Notify("Viewing "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
-		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
-		end
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Respawned";
+			Duration = 5;
+		})
 	end
 
 	if Command("antifling") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn anti fling on";
+			Duration = 5;
+		})
 		States.Anti_Fling = true
-		Notify("Turn anti fling on", Color3.fromRGB(0, 255, 0), "Success")
 		game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Size = Vector3.new(math.huge, game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Size.Y, math.huge)
 	end
 
-	if Command("noclip") or Command("noclips") then
+	if Command("noclip") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn no clips on";
+			Duration = 5;
+		})
 		States.Noclips = true
-		Notify("Turn no clips on", Color3.fromRGB(0, 255, 0), "Success")
 
 		game:GetService("RunService").Stepped:Connect(function()
 			if States.Noclips then
@@ -2092,14 +2152,22 @@ function PlayerChatted(Message)
 		end)
 	end
 
-	if Command("clip") or Command("clips") then
+	if Command("unnoclip") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn no clips off";
+			Duration = 5;
+		})
 		States.Noclips = false
-		Notify("Turn no clips off", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("unantifling") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn anti fling off";
+			Duration = 5;
+		})
 		States.Anti_Fling = false
-		Notify("Turn anti fling off", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("superpunch") or Command("onepunch") then
@@ -2109,7 +2177,11 @@ function PlayerChatted(Message)
 		local Punch = false
 		local Cooldown = false
 		States.SuperPunch = true
-		Notify("Turn super punch on", Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn super punch on";
+			Duration = 5;
+		})
 
 		local function Punch()
 			if not States.Fast_Punch then
@@ -2171,9 +2243,13 @@ function PlayerChatted(Message)
 		end)
 	end
 
-	if Command("normalpunch") or Command("oldpunch") or Command("nosuperpunch") or Command("stoponepunch") or Command("unonepunch") or Command("unsuperpunch") then
+	if Command("normalpunch") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn super punch off";
+			Duration = 5;
+		})
 		States.SuperPunch = false
-		Notify("Turn super punch off", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("superknife") then
@@ -2213,7 +2289,6 @@ function PlayerChatted(Message)
 			SuperKnife[player.UserId] = {Player = player}
 			player.CharacterAdded:Wait()
 			SuperKnife[player.UserId] = nil
-			Notify("Gives "..player.DisplayName.." super knife", Color3.fromRGB(0, 255, 0), "Success")
 		elseif player == nil or player == game.Players.LocalPlayer then
 			local Knife = game.Players.LocalPlayer.Backpack:FindFirstChild("Crude Knife") or game.Players.LocalPlayer.Character:FindFirstChild("Crude Knife")
 			if not Knife then
@@ -2250,8 +2325,12 @@ function PlayerChatted(Message)
 					end)
 				end)
 			end
-			Notify("Obtained super knife", Color3.fromRGB(0, 255, 0), "Success")
 		end
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Obtained super knife";
+			Duration = 5;
+		})
 	end
 
 	if Command("red") then
@@ -2260,72 +2339,147 @@ function PlayerChatted(Message)
 		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Bright red").Name)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
 		workspace.CurrentCamera.CFrame = savedcamcf
-		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Changed name tag color to red";
+			Duration = 5;
+		})
 	end
+
 	if Command("blue") then
 		local savedcf = GetPos()
 		local savedcamcf = GetCamPos()
 		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Deep blue").Name)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
 		workspace.CurrentCamera.CFrame = savedcamcf
-		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Changed name tag color to blue";
+			Duration = 5;
+		})
 	end
+
 	if Command("white") then
 		local savedcf = GetPos()
 		local savedcamcf = GetCamPos()
 		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("White").Name)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
 		workspace.CurrentCamera.CFrame = savedcamcf
-		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Changed name tag color to white";
+			Duration = 5;
+		})
 	end
+
 	if Command("green") then
 		local savedcf = GetPos()
 		local savedcamcf = GetCamPos()
 		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Bright green").Name)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
 		workspace.CurrentCamera.CFrame = savedcamcf
-		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Changed name tag color to green";
+			Duration = 5;
+		})
 	end
+
 	if Command("yellow") then
 		local savedcf = GetPos()
 		local savedcamcf = GetCamPos()
 		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Bright yellow").Name)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
 		workspace.CurrentCamera.CFrame = savedcamcf
-		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Changed name tag color to yellow";
+			Duration = 5;
+		})
 	end
+
 	if Command("orange") then
 		local savedcf = GetPos()
 		local savedcamcf = GetCamPos()
 		workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Neon orange").Name)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savedcf
 		workspace.CurrentCamera.CFrame = savedcamcf
-		Notify("Changed name tag color to "..Arg1:split("."), Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Changed name tag color to orange";
+			Duration = 5;
+		})
 	end
 
-	if Command("unview") or Command("unspectate") or Command("stopwatch") or Command("unwatch") then
+	if Command("view") or Command("spectate") or Command("watch") then
+		local Player = GetPlayer(Arg2)
+		if Player ~= nil then
+			Watching = Player
+
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Viewing "..Player.Name;
+				Duration = 5;
+			})
+		else
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found ";
+				Duration = 5;
+			})
+		end
+		while wait() do
+			if Watching ~= nil then
+				pcall(function()
+					workspace.CurrentCamera.CameraSubject = workspace[Watching.Name]
+				end)
+			end
+		end
+	end
+
+	if Command("unview") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Unviewed";
+			Duration = 5;
+		})
 		Watching = nil
 		workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
-		Notify("Unviewed", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("antivoid") or Command("antifell") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn anti void on";
+			Duration = 5;
+		})
 		States.Anti_Void = true
-		Notify("Turn anti void on", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("unantivoid") or Command("unantifell") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn anti void off";
+			Duration = 5;
+		})
 		States.Anti_Void = false
-		Notify("Turn anti void off", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("bring") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(GetPlayer(Arg2), game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-			Notify("Brought "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
-		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Brought "..Player.Name;
+				Duration = 5;
+			})
+			else
+				StarterGui:SetCore("SendNotification", {
+					Title = "Error";
+					Text = "No player found";
+					Duration = 5;
+				})
 		end
 	end
 
@@ -2334,9 +2488,17 @@ function PlayerChatted(Message)
 		local Player2 = GetPlayer(Arg3)
 		if Player ~= nil and Player2 ~= nil then
 			TeleportV(Player, Player2)
-			Notify("Teleported "..Player.Name.." to "..Player2.Name, Color3.fromRGB(0, 255, 0), "Success")
-		else
-			Notify("No player found", Color3.fromRGB(0, 255, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported "..Player.Name;
+				Duration = 5;
+			})
+			else
+				StarterGui:SetCore("SendNotification", {
+					Title = "Error";
+					Text = "No player found";
+					Duration = 5;
+				})
 		end
 	end
 
@@ -2344,35 +2506,45 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Void(Player)
-			Notify("Voided "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
-		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Voided "..Player.Name;
+				Duration = 5;
+			})
+
+			else
+				StarterGui:SetCore("SendNotification", {
+					Title = "Error";
+					Text = "No player found";
+					Duration = 5;
+				})
 		end
 	end
 
 	if Command("killaura") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn kill aura on";
+			Duration = 5;
+		})
 		States.Kill_Aura = true
-		Notify("Turn kill aura on", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
-	if Command("nokillaura") or Command("unkillaura") then
+	if Command("unkillaura") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn kill aura off";
+			Duration = 5;
+		})
 		States.Kill_Aura = false
-		Notify("Turn kill aura off", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
-	if Command("auto") then
-		States.Auto_Refresh = true
-		Notify("Turn auto refresh on", Color3.fromRGB(0, 255, 0), "Success")
-	end
-
-	if Command("unauto") then
-		States.Auto_Refresh = false
-		Notify("Turn auto refresh off", Color3.fromRGB(0, 255, 0), "Success")
-	end
-
-	if Command("crashserver") or Command("crash") or Command("server") then
-		Notify("Server crash", Color3.fromRGB(0, 255, 0), "Success")
-
+	if Command("crashserver") or Command("server") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Server crashed";
+			Duration = 5;
+		})
 		local Gun = "Remington 870"
 		local Player = game.Players.LocalPlayer.Name
 		game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver[Gun].ITEMPICKUP)
@@ -2407,32 +2579,76 @@ function PlayerChatted(Message)
 		end		
 	end
 
-	if Command("lagserver") or Command("startlagserver") or Command("disconnect") then
-		States.Lag_Server = true
-		Notify("Lagging server", Color3.fromRGB(0, 255, 0), "Success")
-	end
-	if Command("unlagserver") or Command("stoplagserver") or Command("undisconnect") then
-		States.Lag_Server = false
-		Notify("Unlagging server", Color3.fromRGB(0, 255, 0), "Success")
+	if Command("speed") or Command("walkspeed") or Command("setspeed") or Command("setwalkspeed") then
+		local WalkSpeed = tonumber(Arg2)
+		if WalkSpeed ~= nil then
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = WalkSpeed
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Changed walkspeed";
+				Duration = 5;
+			})
+
+		else
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Count needed";
+				Duration = 5;
+			})
+		end
 	end
 
-	if Command("gravity") or Command("setgravity") then
-		local Gravity = tonumber(Arg2)
-		if Gravity ~= nil then
-			workspace.Gravity = Gravity
-			Notify("Changed gravity to "..Gravity, Color3.fromRGB(0, 255, 0), "Success")
+	if Command("jumppower") then
+		local JumpPower = tonumber(Arg2)
+		if JumpPower ~= nil then
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = JumpPower
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Changed jumppower";
+				Duration = 5;
+			})
 		else
-			Notify("Count needed", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Count needed";
+				Duration = 5;
+			})
 		end
+	end
+
+	if Command("lagserver") or Command("startlagserver") or Command("disconnect") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Lagging server";
+			Duration = 5;
+		})
+		States.Lag_Server = true
+	end
+
+	if Command("unlagserver") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Unlagging server";
+			Duration = 5;
+		})
+		States.Lag_Server = false
 	end
 
 	if Command("makecrim") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(-919, 96, 2138))
-			Notify("Crimmed "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Crimmed "..player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2440,9 +2656,17 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(-943, 95, 2055))
-			Notify("teleport to base "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported crimbase "..Player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2450,9 +2674,17 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(822, 131, 2588))
-			Notify("teleport to tower "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported tower "..Player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2460,9 +2692,17 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(502, 126, 2306))
-			Notify("teleport to tower "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported gatetower "..Player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2470,29 +2710,17 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(833.423, 118.99, 2339.43))
-			Notify("teleport to roof "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported roof "..Player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
-		end
-	end
-
-	if Command("armory+") then
-		local Player = GetPlayer(Arg2)
-		if Player ~= nil then
-			Teleport(Player, CFrame.new(403.426, 11.4254, 1174.49))
-			Notify("teleport to armory+ "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
-		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
-		end
-	end
-
-	if Command("lakesidegrocer") or Command("lake") then
-		local Player = GetPlayer(Arg2)
-		if Player ~= nil then
-			Teleport(Player, CFrame.new(474.3, 11.4254, 1171))
-			Notify("teleport to lakeside grocer "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
-		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2500,9 +2728,17 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(918.77,100,2379.07))
-			Notify("teleport to prison "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported prison "..Player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2510,9 +2746,17 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(791, 98, 2498))
-			Notify("teleport to yard "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported yard "..Player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2520,29 +2764,36 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(-342.985, 54.2398, 2015.41))
-			Notify("teleport to trap "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported trap "..Player.Name;
+				Duration = 5;
+			})
+
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
-	if Command("secret") then
-		local Player = GetPlayer(Arg2)
-		if Player ~= nil then
-			Teleport(Player, CFrame.new(697, 97.492, 2364))
-			Notify("teleport to secret room "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
-		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
-		end
-	end
-
-	if Command("policeroom") then
+	if Command("guardsroom") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(836.5386352539062, 99.98998260498047, 2320.604248046875))
-			Notify("teleport to police room "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported guardsroom "..Player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2550,49 +2801,82 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Teleport(Player, CFrame.new(877, 100, 2256))
-			Notify("teleport to cafe "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Teleported cafeteria "..Player.Name;
+				Duration = 5;
+			})
+
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found";
+				Duration = 5;
+			})
 		end
 	end
 
-	if Command("leave") or Command("leaveserver") or Command("quit") then
-		Notify("Leaving server", Color3.fromRGB(0, 255, 0), "Success")
+	if Command("leave") or Command("leaveserver") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Leaving server";
+			Duration = 5;
+		})
 		wait(.1)
 		game:Shutdown()
 	end
 
 	if Command("rejoin") then
-		Notify("Rejoining server", Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Rejoining server";
+			Duration = 5;
+		})
 		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
 	end
 
 	if Command("nodoors") or Command("deletedoors") or Command("removedoors") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Deleted doors";
+			Duration = 5;
+		})
 		if workspace:FindFirstChild("Doors") then
 			workspace.Doors.Parent = game.Lighting
 		end
-		Notify("Deleted doors", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("doors") or Command("restoredoors") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Restored doors";
+			Duration = 5;
+		})
 		if game.Lighting:FindFirstChild("Doors") then
 			game.Lighting.Doors.Parent = workspace
 		end
-		Notify("Restored doors", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
-	if Command("nowalls") or Command("deletedoors") then
-
+	if Command("nowalls") or Command("deletewalls") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Deleted walls";
+			Duration = 5;
+		})
 		pcall(function()
 			for i,v in pairs(Walls) do
 				v.Parent = game.Lighting
 			end
 		end)
 
-		Notify("Deleted walls", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("walls") or Command("restorewalls") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Restored walls";
+			Duration = 5;
+		})
 		pcall(function()
 			for i,v in pairs(game.Lighting:GetChildren()) do
 				if v.Name ~= "Doors" then
@@ -2600,40 +2884,62 @@ function PlayerChatted(Message)
 				end
 			end
 		end)
-		Notify("Restored walls", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("removefences") or Command("nofences") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Deleted fences";
+			Duration = 5;
+		})
 		if workspace:FindFirstChild("Prison_Fences") then
 			workspace.Prison_Fences.Parent = game.Lighting
 		end
-		Notify("Deleted Fences", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("fences") or Command("restorefences") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Restored fences";
+			Duration = 5;
+		})
 		if game.Lighting:FindFirstChild("Prison_Fences") then
 			game.Lighting.Prison_Fences.Parent = workspace
 		end
-		Notify("Restored fences", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("god") or Command("godmode") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn god mode on";
+			Duration = 5;
+		})
 		States.God_Mode = true
-		Notify("Turn god mode on", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("ungod") or Command("ungodmode") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn god mode off";
+			Duration = 5;
+		})
 		States.God_Mode = false
-		Notify("Turn god mode off", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("arrest") or Command("handcuffs") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			Arrest(Player, tonumber(Arg3))
-			Notify("Arrested "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			StarterGui:SetCore("SendNotification", {
+				Title = "Success";
+				Text = "Arrested "..Player.Name;
+				Duration = 5;
+			})
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
-
+			StarterGui:SetCore("SendNotification", {
+				Title = "Error";
+				Text = "No player found ";
+				Duration = 5;
+			})
 		end
 	end
 
@@ -2642,11 +2948,14 @@ function PlayerChatted(Message)
 			if v ~= game.Players.LocalPlayer then
 				if v.TeamColor.Name == "Really red" then
 					Arrest(v, 10)
+					StarterGui:SetCore("SendNotification", {
+						Title = "Success";
+						Text = "Arrested all criminals";
+						Duration = 5;
+					})
 				end
 			end
 		end
-
-		Notify("Arrested all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("click") or Command("clickarrest") then
@@ -2659,13 +2968,21 @@ function PlayerChatted(Message)
 	end
 
 	if Command("opengate") then
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Opened gate";
+			Duration = 5;
+		})
 		workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.buttons["Prison Gate"]["Prison Gate"])
-		Notify("Opened gate", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("autorapidfire") then
 		States.Auto_RapidFire = true
-		Notify("Turn auto rapid fire on", Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn auto rapid fire on";
+			Duration = 5;
+		})
 		if game.Players.LocalPlayer.TeamColor.Name ~= "Medium stone grey" then
 			local savedcf = GetOrientation()
 			local savedcamcf = GetCamPos()
@@ -2684,6 +3001,11 @@ function PlayerChatted(Message)
 
 	if Command("unautorapidfire") then
 		States.Auto_RapidFire = false
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn auto rapid fire off";
+			Duration = 5;
+		})
 		if game.Players.LocalPlayer.TeamColor.Name ~= "Medium stone grey" then
 			local savedcf = GetOrientation()
 			local savedcamcf = GetCamPos()
@@ -2698,7 +3020,6 @@ function PlayerChatted(Message)
 			workspace.CurrentCamera.CFrame = savedcamcf
 			workspace.Remote.TeamEvent:FireServer("Medium stone grey")
 		end
-		Notify("Turn auto rapid fire off", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("baseballbat") or Command("bat") then
@@ -2741,10 +3062,15 @@ function PlayerChatted(Message)
 				end)
 			end)
 		end
-		Notify("Obtained base ball bat", Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Obtained base ball bat";
+			Duration = 5;
+		})
 	end
 
 	if Command("btools") then
+
 		local Backpack = game.Players.LocalPlayer.Backpack
 		local Character = game.Players.LocalPlayer.Character
 		if not Backpack:FindFirstChild("Bin_1") and not Character:FindFirstChild("Bin_1") then
@@ -2771,12 +3097,20 @@ function PlayerChatted(Message)
 			HopperBin_4.Name = "Bin_4"
 		end
 		loadstring(game:GetObjects("rbxassetid://552440069")[1].Source)()
-		Notify("Obtained btools", Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Obtained btools";
+			Duration = 5;
+		})
 	end
 
 	if Command("antilag") or Command("boostfps") then
 		States.BoostFps = true
-		Notify("Turn anti lag on", Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn anti lag on";
+			Duration = 5;
+		})
 		for _, v in pairs(game:GetDescendants()) do
 			pcall(function()
 				v.Material = Enum.Material.Plastic
@@ -2787,7 +3121,11 @@ function PlayerChatted(Message)
 
 	if Command("unantilag") then
 		States.BoostFps = false
-		Notify("Turn anti lag off", Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Turn anti lag off";
+			Duration = 5;
+		})
 		for _, v in pairs(game:GetDescendants()) do
 			pcall(function()
 				v.Material = Material[v.Name].Material
@@ -2796,7 +3134,11 @@ function PlayerChatted(Message)
 	end
 
 	if Command("serverhop") or Command("newserver") or Command("changeserver") then
-		Notify("Changing server", Color3.fromRGB(0, 255, 0), "Success")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success";
+			Text = "Changing server";
+			Duration = 5;
+		})
 		wait(.1)
 		game:GetService("TeleportService"):Teleport(game.PlaceId)
 	end
@@ -2856,10 +3198,6 @@ function PlayerChatted(Message)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(836.5386352539062, 99.98998260498047, 2320.604248046875)
 	end
 
-	if Command("secret") or Command("secretroom") then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(697, 97.492, 2364)
-	end
-
 	if Command("surveilance") or Command("surve") then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(795.251953125, 99.98998260498047, 2327.720703125)
 	end
@@ -2890,21 +3228,18 @@ function PlayerChatted(Message)
 
 	if Command("notify") then
 		States.Notify = true
-		Notify("Notify on", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
 	if Command("nonotify") then
 		States.Notify = false
-		Notify("Notify off", Color3.fromRGB(0, 255, 0), "Success")
 	end
 
-	if Command("cmd") or Command("cmds") then
+	if Command("cmd") then
 		if Background.Visible == true then
 			Background.Visible = false
 		else
 			Background.Visible = true
 		end
-		Notify("Showed Commands", Color3.fromRGB(0, 255, 0), "Success")
 	end
 end
 
@@ -2966,8 +3301,6 @@ function AdminPlayerChatted(Message, Player)
 	if Command("hallway") then
 		Teleport(Player, CFrame.new(860.78448486328, 99.990005493164, 2362.9597167969))	
 	end 
-
-
 
 	if Command("killguard") or Command("killguards") then
 		wait(.075)
@@ -3926,12 +4259,11 @@ end
 
 workspace.Remote.loadchar:InvokeServer()
 game.Workspace["Criminals Spawn"]:Destroy()
-workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Bright red").Name)
+workspace.Remote.loadchar:InvokeServer(nil, BrickColor.new("Deep blue").Name)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.77,100,2379.07)
 States.Auto_Refresh = true
 States.Auto_Guns = true
 States.Fast_Punch = true
-States.Auto_RapidFire = false
 workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
 workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
 workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
