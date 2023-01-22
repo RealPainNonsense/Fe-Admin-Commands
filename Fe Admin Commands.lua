@@ -3,7 +3,7 @@ local Player = game:GetService("Players")
 
 StarterGui:SetCore("SendNotification", {
 	Title = "Loaded FE Admin Commands";
-	Text = "Made by Pain Exploiter Team";
+	Text = "Made by Solaris Hub Official Team";
 	Duration = 5;
 })
 
@@ -274,7 +274,6 @@ Cmd[#Cmd + 1] =		{Text = "view / spectate / watch [plr]",Title = "Spectates the 
 Cmd[#Cmd + 1] =		{Text = "unview / unspectate / stopwatch",Title = "Unspectates the player"}
 Cmd[#Cmd + 1] =		{Text = "superpunch / onepunch",Title = "Activate super punch"}
 Cmd[#Cmd + 1] =		{Text = "nosuperpunch / normalpunch",Title = "Unactivate super punch"}
-Cmd[#Cmd + 1] =		{Text = "prefix",Title = "Changes prefix"}
 Cmd[#Cmd + 1] = 	{Text = "antilag / boostfps",Title = "Boost a little fps"}
 Cmd[#Cmd + 1] = 	{Text = "unantilag",Title = "Stop boost the fps"}
 Cmd[#Cmd + 1] = 	{Text = "noclip / noclips",Title = "Activate no clips"}
@@ -1401,25 +1400,6 @@ function PlayerChatted(Message)
 			Duration = 5;
 		})
 		loadstring(game:HttpGetAsync("https://pastebin.com/raw/SyF5t70A", true))()
-	end
-
-	if Command("prefix") then
-		local NewPrefix = Arg2
-		if NewPrefix ~= nil then
-			Prefix = NewPrefix
-			Execute.PlaceholderText = "Press "..Prefix.." To Enter"
-			StarterGui:SetCore("SendNotification", {
-				Title = "Success";
-				Text = "Changed prefix";
-				Duration = 5;
-			})
-		else
-			StarterGui:SetCore("SendNotification", {
-				Title = "Error";
-				Text = "Text needed";
-				Duration = 5;
-			})
-		end
 	end
 
 	if Command("cmds") then
@@ -4227,7 +4207,7 @@ end)
 
 game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(Key)
 	if Key == Prefix then
-		if Prefix ~= "/" then
+		if Prefix ~= ":" then
 			Execute:CaptureFocus()
 		end
 	end
