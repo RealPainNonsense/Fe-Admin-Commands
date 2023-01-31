@@ -1503,7 +1503,7 @@ function PlayerChatted(Message)
 		Fly()
 	end
 
-	if Command ("key") or Command ("card") then
+	if Command("keycard") or Command("key") or Command("card") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil then
 			local savedteam = game.Players.LocalPlayer.TeamColor.Name
@@ -1622,6 +1622,7 @@ function PlayerChatted(Message)
 			Velocity.MaxForce = Vector3.new(9e4, 9e4, 9e4)
 			Velocity.Velocity = Vector3.new(0, 0, 0)
 		end)
+		
 		local controls = {"w","a","s","d","e","q"}
 		local controlsValues = {1, -1, -1, 1, -1, 1}
 		local controlsStats = {w = 0, a = 0, s = 0, d = 0, e = 0, q = 0}
