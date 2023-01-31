@@ -224,8 +224,8 @@ end)
 local UseCommand = false
 local Cmd = {}
 
-Cmd[#Cmd + 1] =		{Text = "admin / rank [plr]",Title = "Give a commands to player"}
-Cmd[#Cmd + 1] =		{Text = "unadmin / removeadmin [plr]",Title = "Remove a commands from player"}
+Cmd[#Cmd + 1] =		{Text = "giveadmin / addrank [plr]",Title = "Give a commands to player"}
+Cmd[#Cmd + 1] =		{Text = "removeadmin / removerank [plr]",Title = "Remove a commands from player"}
 Cmd[#Cmd + 1] =		{Text = "btools",Title = "Give local player btools"}
 Cmd[#Cmd + 1] =		{Text = "rejoin",Title = "Rejoin the game"}
 Cmd[#Cmd + 1] = 	{Text = "cuffs [plr]",Title = "Gives player hand cuffs"}
@@ -1306,11 +1306,11 @@ function PlayerChatted(Message)
 		})
 	end
 
-	if Command("giveadmin") or Command("giverank") or Command("giveadmin") or Command("rank") then
+	if Command("giveadmin") or Command("addrank") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and not Admin[Player.UserId] then
 			Admin[Player.UserId] = {Player = Player}
-			Chat("/w "..Player.Name.." You've got admin permissions! Type "..Prefix.."cmds or "..Prefix.."cmd to see all commands")
+			Chat("/w "..Player.Name.." You've got admin permissions! Type "..Prefix.." cmds to see all commands")
 
 			StarterGui:SetCore("SendNotification", {
 				Title = "Success";
@@ -1326,7 +1326,7 @@ function PlayerChatted(Message)
 				})
 		end
 	end
-	if Command("removeadmin") or Command("removerank") or Command("unadmin") then
+	if Command("removeadmin") or Command("removerank") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and Admin[Player.UserId] then
 			Admin[Player.UserId] = nil
@@ -1622,7 +1622,7 @@ function PlayerChatted(Message)
 			Velocity.MaxForce = Vector3.new(9e4, 9e4, 9e4)
 			Velocity.Velocity = Vector3.new(0, 0, 0)
 		end)
-		
+
 		local controls = {"w","a","s","d","e","q"}
 		local controlsValues = {1, -1, -1, 1, -1, 1}
 		local controlsStats = {w = 0, a = 0, s = 0, d = 0, e = 0, q = 0}
@@ -3384,7 +3384,7 @@ function AdminPlayerChatted(Message, Player)
 		TeleportV(Player, GetPlayer(Arg2))
 	end
 
-	if Command("cmd") or Command("cmds") then
+	if  Command("cmds") then
 		Chat("/w "..Player.Name.." "..Prefix.."goto [plr] "..Prefix.."to [plr] "..Prefix.."kill [plr] "..Prefix.."kills [plr] "..Prefix.."makecrim [plr] "..Prefix.."arrest [plr] "..Prefix.."tase [plr] "..Prefix.."loopkill [plr] "..Prefix.."unloopkill [plr]")
 		Chat("/w "..Player.Name.." "..Prefix.."crim "..Prefix.."tower "..Prefix.."nexus "..Prefix.."backnexus "..Prefix.."cafe "..Prefix.."armory "..Prefix.."bring [plr]")
 		Chat("/w "..Player.Name.." "..Prefix.."killall "..Prefix.."killothers "..Prefix.."killinmate "..Prefix.."killinmates "..Prefix.."killguard "..Prefix.."killguards "..Prefix.."killcriminals "..Prefix.."killcriminal "..Prefix.."void [plr] "..Prefix.."taseall ")
