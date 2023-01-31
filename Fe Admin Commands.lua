@@ -225,11 +225,11 @@ local UseCommand = false
 local Cmd = {}
 
 Cmd[#Cmd + 1] =		{Text = "giveadmin / addrank [plr]",Title = "Give a commands to player"}
-Cmd[#Cmd + 1] =		{Text = "removeadmin / removerank [plr]",Title = "Remove a commands from player"}
+Cmd[#Cmd + 1] =		{Text = "removeadmin / removeadmin [plr]",Title = "Remove a commands from player"}
 Cmd[#Cmd + 1] =		{Text = "btools",Title = "Give local player btools"}
 Cmd[#Cmd + 1] =		{Text = "rejoin",Title = "Rejoin the game"}
 Cmd[#Cmd + 1] = 	{Text = "cuffs [plr]",Title = "Gives player hand cuffs"}
-Cmd[#Cmd + 1] = 	{Text = "keycard / key / card [plr]",Title = "Gives player key card"}
+Cmd[#Cmd + 1] = 	{Text = "keycard / key [plr]",Title = "Gives player key card"}
 Cmd[#Cmd + 1] =		{Text = "leave / leaveserver / quit",Title = "Leave the server"}
 Cmd[#Cmd + 1] = 	{Text = "antitp / antibring",Title = "You are cannot be bring by another exploiter"}
 Cmd[#Cmd + 1] = 	{Text = "unantitp / unantibring",Title = "You are can be bring by another exploiter"}
@@ -1503,7 +1503,7 @@ function PlayerChatted(Message)
 		Fly()
 	end
 
-	if Command("keycard") or Command("key") or Command("card") then
+	if Command("keycard") or Command("key") then
 		local plr = GetPlayer(Arg2)
 		if plr ~= nil then
 			local savedteam = game.Players.LocalPlayer.TeamColor.Name
